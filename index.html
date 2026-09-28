@@ -1,0 +1,1977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A verbatim, sourced collection of on-board dining menus from 35 European train services across 16 countries — scheduled and luxury, in their original languages, with English glosses and cultural notes.">
+<title>Europe’s Dining Cars</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap">
+<style>
+:root{
+  --ground:#E7EAE6; --paper:#F8F9F6; --ink:#161B1E; --ink-2:#4D575C; --ink-3:#687175;
+  --rule:#C6CDC9; --accent:#F1C92B; --on-accent:#161B1E; --red:#B3311D;
+  --board:#14181B; --board-2:#1E2327; --board-line:#0A0C0D; --board-ink:#F1C92B; --board-text:#E6E9E4; --board-dim:#8D979B;
+  --display:"Barlow Condensed","Arial Narrow","Roboto Condensed",sans-serif;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  --gutter:clamp(16px,4vw,40px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --ground:#0E1214; --paper:#171C1F; --ink:#E4E8E3; --ink-2:#A7B0AD; --ink-3:#8A938F;
+    --rule:#2C3438; --red:#EE7A62; --board:#07090A; --board-2:#111517; --board-line:#000;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ground:#0E1214; --paper:#171C1F; --ink:#E4E8E3; --ink-2:#A7B0AD; --ink-3:#8A938F;
+  --rule:#2C3438; --red:#EE7A62; --board:#07090A; --board-2:#111517; --board-line:#000;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:3px}
+a:hover{text-decoration-color:var(--ink)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1240px;margin-inline:auto;padding-inline:var(--gutter)}
+
+/* ---------- Departure board hero ---------- */
+.hero{background:var(--board);color:var(--board-text);padding-block:clamp(28px,5vw,56px) clamp(24px,4vw,40px)}
+.eyebrow{font-family:var(--display);font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--board-dim);font-size:.95rem;margin:0}
+.eyebrow span{color:var(--board-ink)}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(3rem,9vw,6.4rem);line-height:.9;letter-spacing:-.01em;color:var(--board-ink);margin:.35rem 0 1rem;text-transform:uppercase;text-wrap:balance}
+.dek{max-width:62ch;font-size:1.06rem;color:var(--board-text);margin:0 0 1.1rem}
+.stats{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;font-family:var(--mono);font-size:.8rem;color:var(--board-dim);margin:0 0 1.6rem;padding:0;list-style:none}
+.stats b{color:var(--board-ink);font-weight:500}
+
+.board{border:1px solid #2A3034;background:var(--board-2)}
+.board-head,.board li a{display:grid;grid-template-columns:3.2rem minmax(7rem,1.1fr) minmax(8rem,1.4fr) minmax(8rem,1.3fr);gap:.8rem;align-items:center;padding:.42rem .9rem}
+.board-head{font-family:var(--display);font-weight:600;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--board-dim);border-bottom:1px solid #2A3034}
+.board ol{list-style:none;margin:0;padding:0;max-height:24.5rem;overflow-y:auto;scrollbar-color:#3a4247 transparent}
+.board li a{text-decoration:none;border-bottom:1px solid var(--board-line);font-family:var(--display);font-weight:600;font-size:1.02rem;letter-spacing:.04em;text-transform:uppercase;color:var(--board-text);position:relative}
+.board li a:hover,.board li a:focus-visible{background:#262c30}
+.board li a::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:rgba(0,0,0,.35);pointer-events:none}
+.b-uic{color:var(--on-accent);background:var(--board-ink);text-align:center;font-weight:700;padding:.05rem 0;font-variant-numeric:tabular-nums}
+.b-dish{color:var(--board-ink)}
+.b-svc{color:var(--board-dim);font-weight:500}
+.board-foot{font-family:var(--mono);font-size:.72rem;color:var(--board-dim);padding:.5rem .9rem;border-top:1px solid #2A3034;margin:0}
+@media (prefers-reduced-motion:no-preference){
+  .board li{animation:flap .42s cubic-bezier(.2,.7,.3,1) backwards;transform-origin:50% 0}
+  .board li:nth-child(1){animation-delay:.05s}.board li:nth-child(2){animation-delay:.1s}.board li:nth-child(3){animation-delay:.15s}
+  .board li:nth-child(4){animation-delay:.2s}.board li:nth-child(5){animation-delay:.25s}.board li:nth-child(6){animation-delay:.3s}
+  .board li:nth-child(7){animation-delay:.35s}.board li:nth-child(8){animation-delay:.4s}.board li:nth-child(9){animation-delay:.45s}
+  .board li:nth-child(10){animation-delay:.5s}.board li:nth-child(11){animation-delay:.55s}.board li:nth-child(12){animation-delay:.6s}
+  @keyframes flap{from{transform:perspective(400px) rotateX(-80deg)}to{transform:none}}
+}
+
+/* ---------- Filters ---------- */
+.filters{display:flex;flex-wrap:wrap;gap:.5rem;padding-block:1.4rem .4rem}
+.chip{font:600 .92rem/1 var(--display);letter-spacing:.06em;text-transform:uppercase;border:1.5px solid var(--ink);background:transparent;color:var(--ink);padding:.5rem .75rem;cursor:pointer;border-radius:0}
+.chip span{font-family:var(--mono);font-weight:400;font-size:.75rem;opacity:.7;margin-left:.25rem}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.chip:hover{border-color:var(--accent)}
+
+/* ---------- Sections ---------- */
+.region{padding-block:1.6rem .4rem}
+.sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;font-family:var(--display);font-weight:700;font-size:clamp(1.7rem,3.4vw,2.4rem);text-transform:uppercase;letter-spacing:.01em;margin:0 0 1.2rem;padding-bottom:.5rem;
+  background:linear-gradient(var(--ink),var(--ink)) left bottom/100% 2px no-repeat,linear-gradient(var(--ink),var(--ink)) left calc(100% - 6px)/100% 2px no-repeat;padding-bottom:14px;text-wrap:balance}
+.sec-count{font-family:var(--mono);font-weight:400;font-size:.8rem;letter-spacing:0;text-transform:none;color:var(--ink-3);white-space:nowrap}
+.sec-intro{max-width:62ch;color:var(--ink-2);margin:-.4rem 0 1.2rem}
+.cards{columns:2 30rem;column-gap:1.5rem}
+
+/* ---------- Menu cards ---------- */
+.card{break-inside:avoid;display:block;background:var(--paper);border:1px solid var(--rule);margin:0 0 1.5rem;scroll-margin-top:16px}
+.plate{background:var(--board);color:var(--board-text);display:flex;gap:.8rem;align-items:stretch;padding:.6rem .8rem .6rem .6rem}
+.uic{flex:none;display:grid;place-items:center;min-width:2.9rem;padding:0 .4rem;background:var(--board-ink);color:var(--on-accent);font:700 1.05rem/1 var(--display);letter-spacing:.04em;text-align:center;font-variant-numeric:tabular-nums}
+.plate-text{display:flex;flex-direction:column;min-width:0}
+.op{font:700 1.35rem/1.05 var(--display);letter-spacing:.03em;text-transform:uppercase;color:var(--board-ink)}
+.svc{font-size:.84rem;color:var(--board-dim)}
+.card-body{padding:1rem 1.1rem 1.1rem}
+.where{margin:0 0 .5rem;font-family:var(--display);font-weight:600;font-size:.86rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);display:flex;flex-wrap:wrap;gap:.2rem .8rem}
+.route::before{content:"→ ";color:var(--ink-3)}
+.note{margin:0 0 1rem;color:var(--ink-2);font-size:.92rem;max-width:65ch}
+.items{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.item{padding:.8rem 0 .85rem;border-bottom:1px solid var(--rule)}
+.line{display:flex;align-items:baseline;gap:.5rem}
+.dish{font-family:var(--serif);font-weight:500;font-size:1.2rem;line-height:1.25;color:var(--ink);font-optical-sizing:auto;min-width:0;overflow-wrap:anywhere}
+.dots{flex:1 1 1.5rem;min-width:1.5rem;border-bottom:2px dotted var(--rule);transform:translateY(-.3em)}
+.price{flex:none;font-family:var(--mono);font-size:.86rem;font-weight:500;color:var(--ink);white-space:nowrap;font-variant-numeric:tabular-nums;max-width:48%;white-space:normal;text-align:right}
+.price.inc{color:var(--ink-3);font-weight:400}
+.desc{margin:.2rem 0 0;font-family:var(--serif);font-style:italic;font-size:.98rem;color:var(--ink-2);line-height:1.4}
+.gloss{margin:.45rem 0 0;font-size:.9rem;color:var(--ink)}
+.gloss::before{content:"EN";font:500 .62rem/1 var(--mono);letter-spacing:.06em;color:var(--ink-3);border:1px solid var(--rule);padding:.12rem .25rem;margin-right:.45rem;vertical-align:.12em}
+.why{margin:.25rem 0 0;font-size:.85rem;color:var(--ink-2);line-height:1.45}
+.caveat{margin:.9rem 0 0;font-size:.82rem;color:var(--ink-2);padding-left:.8rem;border-left:2px solid var(--red)}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:.55rem 1.2rem;margin:1rem 0 0;font-size:.82rem}
+.meta div{min-width:0}
+.meta dt{font:600 .72rem/1.2 var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.meta dd{margin:.1rem 0 0;color:var(--ink-2)}
+.sources{margin-top:1rem;padding-top:.8rem;border-top:1px dashed var(--rule);font-size:.86rem}
+.src-label{font:600 .72rem/1.2 var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.sources ul{list-style:none;margin:.35rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.3rem 1.1rem}
+.sources a::after{content:" ↗";font-family:var(--mono);font-size:.8em;text-decoration:none;display:inline-block;margin-left:.1em}
+
+/* ---------- Footer ---------- */
+.colophon{border-top:2px solid var(--ink);margin-top:1.5rem;padding-block:1.6rem 3rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr));gap:1.6rem 2.4rem}
+.colophon h2{font:700 1.3rem/1.1 var(--display);text-transform:uppercase;letter-spacing:.03em;margin:0 0 .6rem}
+.colophon p,.colophon li{font-size:.9rem;color:var(--ink-2);max-width:65ch}
+.colophon p{margin:0 0 .7rem}
+.colophon ul{margin:0;padding-left:1.1rem}
+.colophon li{margin-bottom:.4rem}
+.colophon strong{color:var(--ink);font-weight:600}
+
+@media (max-width:640px){
+  .board-head,.board li a{grid-template-columns:2.6rem 1fr;row-gap:.1rem}
+  .board-head span:nth-child(3),.board-head span:nth-child(4){display:none}
+  .b-svc{grid-column:2}
+  .b-dish{grid-column:2}
+  .board li a::after{display:none}
+  .op{font-size:1.2rem}
+  .dish{font-size:1.1rem}
+}
+</style></head>
+<body>
+
+
+<header class="hero">
+ <div class="wrap">
+  <p class="eyebrow"><span>Speisewagen</span> · Voiture-restaurant · Vagone ristorante · Jídelní vůz · Restaurangvagn · Dining car</p>
+  <h1>Europe’s Dining Cars</h1>
+  <p class="dek">What’s on the menu aboard 35 European trains. Every dish and drink is quoted in its original language, exactly as the operator prints it, with a short English note on why it belongs on that line.</p>
+  <ul class="stats">
+   <li><b>35</b> services</li>
+   <li><b>173</b> dishes &amp; drinks</li>
+   <li><b>14</b> menu languages</li>
+   <li>Checked against operators’ own sites on <b>27 Sept 2026</b></li>
+  </ul>
+  <div class="board" role="navigation" aria-label="Departure board: jump to a train">
+   <div class="board-head" aria-hidden="true"><span>UIC</span><span>Operator</span><span>Service</span><span>Order this</span></div>
+   <ol>
+<li data-region="alpine"><a href="#db">
+  <span class="b-uic">80</span>
+  <span class="b-op">Deutsche Bahn</span>
+  <span class="b-svc">ICE Bordrestaurant &amp; Bordbistro</span>
+  <span class="b-dish" lang="de">Currywurst</span>
+</a></li>
+<li data-region="alpine"><a href="#oebb-railjet">
+  <span class="b-uic">81</span>
+  <span class="b-op">ÖBB</span>
+  <span class="b-svc">Railjet Bordrestaurant</span>
+  <span class="b-dish" lang="de-AT">Wiener Schnitzel vom Schwein</span>
+</a></li>
+<li data-region="alpine"><a href="#nightjet">
+  <span class="b-uic">81</span>
+  <span class="b-op">ÖBB Nightjet</span>
+  <span class="b-svc">Sleeper menu (Schlafwagen &amp; Liegewagen)</span>
+  <span class="b-dish" lang="de-AT">Kalbsbutterschnitzerl</span>
+</a></li>
+<li data-region="alpine"><a href="#sbb">
+  <span class="b-uic">85</span>
+  <span class="b-op">SBB</span>
+  <span class="b-svc">SBB Restaurant (dining car)</span>
+  <span class="b-dish" lang="de-CH">Ghackets mit Hörnli</span>
+</a></li>
+<li data-region="alpine"><a href="#glacier">
+  <span class="b-uic">85</span>
+  <span class="b-op">Glacier Express</span>
+  <span class="b-svc">At-seat menu, 1st &amp; 2nd class</span>
+  <span class="b-dish" lang="de-CH">Bündner Gerstensuppe</span>
+</a></li>
+<li data-region="alpine"><a href="#bernina">
+  <span class="b-uic">85</span>
+  <span class="b-op">Rhaetian Railway (RhB)</span>
+  <span class="b-svc">Bernina Express trolley</span>
+  <span class="b-dish" lang="de-CH">Tuorta da Nusch</span>
+</a></li>
+<li data-region="east"><a href="#cd">
+  <span class="b-uic">54</span>
+  <span class="b-op">České dráhy (ČD)</span>
+  <span class="b-svc">ČD Restaurant, ComfortJet restaurant car</span>
+  <span class="b-dish" lang="cs">Svíčková na smetaně</span>
+</a></li>
+<li data-region="east"><a href="#zssk">
+  <span class="b-uic">56</span>
+  <span class="b-op">ZSSK</span>
+  <span class="b-svc">Restaurant car (reštauračný vozeň)</span>
+  <span class="b-dish" lang="sk">Vyprážaný syr</span>
+</a></li>
+<li data-region="east"><a href="#wars">
+  <span class="b-uic">51</span>
+  <span class="b-op">PKP Intercity – WARS</span>
+  <span class="b-svc">WARS restaurant car, EIP &amp; EIC trains</span>
+  <span class="b-dish" lang="pl">Żurek na zakwasie</span>
+</a></li>
+<li data-region="east"><a href="#mav">
+  <span class="b-uic">55</span>
+  <span class="b-op">MÁV (Utasellátó)</span>
+  <span class="b-svc">Dining car, Budapest – Wien EuroCity</span>
+  <span class="b-dish" lang="hu">Gulyásleves</span>
+</a></li>
+<li data-region="east"><a href="#cfr">
+  <span class="b-uic">53</span>
+  <span class="b-op">CFR Călători</span>
+  <span class="b-svc">Bar-bistro car</span>
+  <span class="b-dish" lang="ro">Olteneşti la grătar</span>
+</a></li>
+<li data-region="west"><a href="#sncf">
+  <span class="b-uic">87</span>
+  <span class="b-op">SNCF – TGV INOUI</span>
+  <span class="b-svc">Le Bistro (bar car)</span>
+  <span class="b-dish" lang="fr">Croque-monsieur</span>
+</a></li>
+<li data-region="west"><a href="#lyria">
+  <span class="b-uic">87</span>
+  <span class="b-op">TGV Lyria</span>
+  <span class="b-svc">Le Bistrot (bar car)</span>
+  <span class="b-dish" lang="fr">Le renversé</span>
+</a></li>
+<li data-region="west"><a href="#eurostar">
+  <span class="b-uic">70</span>
+  <span class="b-op">Eurostar</span>
+  <span class="b-svc">Eurostar Café (bar car)</span>
+  <span class="b-dish" lang="en">Pain aux raisins</span>
+</a></li>
+<li data-region="west"><a href="#frecciarossa">
+  <span class="b-uic">83</span>
+  <span class="b-op">Trenitalia – Frecciarossa</span>
+  <span class="b-svc">Executive class menu</span>
+  <span class="b-dish" lang="it">Maritozzo al pomodoro</span>
+</a></li>
+<li data-region="west"><a href="#renfe">
+  <span class="b-uic">71</span>
+  <span class="b-op">Renfe</span>
+  <span class="b-svc">AVE &amp; Larga Distancia “Menús Box”</span>
+  <span class="b-dish" lang="es">Box Ibérico</span>
+</a></li>
+<li data-region="west"><a href="#iryo">
+  <span class="b-uic">71</span>
+  <span class="b-op">iryo</span>
+  <span class="b-svc">HAIZEA bar menu</span>
+  <span class="b-dish" lang="es">Pintxo de tortilla</span>
+</a></li>
+<li data-region="west"><a href="#ouigo">
+  <span class="b-uic">71</span>
+  <span class="b-op">OUIGO España</span>
+  <span class="b-svc">OUIBAR (bar car)</span>
+  <span class="b-dish" lang="es">Tinto de verano</span>
+</a></li>
+<li data-region="north"><a href="#sj">
+  <span class="b-uic">74</span>
+  <span class="b-op">SJ</span>
+  <span class="b-svc">SJ Bistro</span>
+  <span class="b-dish" lang="sv">Kanelbulle</span>
+</a></li>
+<li data-region="north"><a href="#sj-malmbanan">
+  <span class="b-uic">74</span>
+  <span class="b-op">SJ</span>
+  <span class="b-svc">SJ Bistro, Malmbanan</span>
+  <span class="b-dish" lang="sv">Renklämma</span>
+</a></li>
+<li data-region="north"><a href="#vr">
+  <span class="b-uic">10</span>
+  <span class="b-op">VR</span>
+  <span class="b-svc">Ravintolavaunu (restaurant car)</span>
+  <span class="b-dish" lang="fi">Lihapullat &amp; perunamuusi</span>
+</a></li>
+<li data-region="north"><a href="#vy">
+  <span class="b-uic">76</span>
+  <span class="b-op">Vy</span>
+  <span class="b-svc">Vy kafé, Bergensbanen</span>
+  <span class="b-dish" lang="nb">Vaffel med brunost</span>
+</a></li>
+<li data-region="north"><a href="#sj-norge">
+  <span class="b-uic">76</span>
+  <span class="b-op">SJ Norge</span>
+  <span class="b-svc">Kafé, Dovrebanen &amp; Nordlandsbanen</span>
+  <span class="b-dish" lang="nb">Rørosis</span>
+</a></li>
+<li data-region="isles"><a href="#caledonian">
+  <span class="b-uic">70</span>
+  <span class="b-op">Caledonian Sleeper</span>
+  <span class="b-svc">Club Car</span>
+  <span class="b-dish" lang="en">Haggis, neeps and tatties</span>
+</a></li>
+<li data-region="isles"><a href="#lner">
+  <span class="b-uic">70</span>
+  <span class="b-op">LNER</span>
+  <span class="b-svc">First Class at-seat menu</span>
+  <span class="b-dish" lang="en">Full LNER</span>
+</a></li>
+<li data-region="isles"><a href="#gwr">
+  <span class="b-uic">70</span>
+  <span class="b-op">GWR</span>
+  <span class="b-svc">Pullman Dining (restaurant car)</span>
+  <span class="b-dish" lang="en">6oz Fillet Steak</span>
+</a></li>
+<li data-region="isles"><a href="#avanti">
+  <span class="b-uic">70</span>
+  <span class="b-op">Avanti West Coast</span>
+  <span class="b-svc">First Class at-seat menu</span>
+  <span class="b-dish" lang="en">Toasted Teacake</span>
+</a></li>
+<li data-region="isles"><a href="#tfw">
+  <span class="b-uic">70</span>
+  <span class="b-op">Transport for Wales</span>
+  <span class="b-svc">First Class dining, Premier Service</span>
+  <span class="b-dish" lang="en">Welsh onion tart</span>
+</a></li>
+<li data-region="isles"><a href="#enterprise">
+  <span class="b-uic">60</span>
+  <span class="b-op">Iarnród Éireann &amp; NI Railways</span>
+  <span class="b-svc">Enterprise First Plus</span>
+  <span class="b-dish" lang="en">Enterprise Full Breakfast</span>
+</a></li>
+<li data-region="luxury"><a href="#vsoe">
+  <span class="b-uic">87</span>
+  <span class="b-op">Belmond</span>
+  <span class="b-svc">Venice Simplon-Orient-Express</span>
+  <span class="b-dish" lang="fr">Le homard en Bellevue</span>
+</a></li>
+<li data-region="luxury"><a href="#britannic">
+  <span class="b-uic">70</span>
+  <span class="b-op">Belmond</span>
+  <span class="b-svc">Britannic Explorer</span>
+  <span class="b-dish" lang="en">Newlyn Bay crab</span>
+</a></li>
+<li data-region="luxury"><a href="#pullman">
+  <span class="b-uic">70</span>
+  <span class="b-op">Belmond</span>
+  <span class="b-svc">British Pullman</span>
+  <span class="b-dish" lang="en">Roast beef &amp; Yorkshire pudding</span>
+</a></li>
+<li data-region="luxury"><a href="#royal-scotsman">
+  <span class="b-uic">70</span>
+  <span class="b-op">Belmond</span>
+  <span class="b-svc">Royal Scotsman</span>
+  <span class="b-dish" lang="en">Shetland lobster consommé</span>
+</a></li>
+<li data-region="luxury"><a href="#glacier-excellence">
+  <span class="b-uic">85</span>
+  <span class="b-op">Glacier Express</span>
+  <span class="b-svc">Excellence Class</span>
+  <span class="b-dish" lang="de-CH">Schweizer Rindsfilet</span>
+</a></li>
+<li data-region="luxury"><a href="#goldenpass">
+  <span class="b-uic">85</span>
+  <span class="b-op">GoldenPass Express</span>
+  <span class="b-svc">1st Class &amp; Prestige</span>
+  <span class="b-dish" lang="en">Oona caviar</span>
+</a></li>
+   </ol>
+   <p class="board-foot">UIC = the two-digit country code used in European railway vehicle numbers. Cards with several codes show the countries the service runs through.</p>
+  </div>
+ </div>
+</header>
+
+<main class="wrap">
+ <nav class="filters" aria-label="Filter by region"><button type="button" class="chip" aria-pressed="true" data-filter="all" id="f-all">All <span>35</span></button><button type="button" class="chip" aria-pressed="false" data-filter="alpine" id="f-alpine">Germany, Austria &amp; Switzerland <span>6</span></button><button type="button" class="chip" aria-pressed="false" data-filter="east" id="f-east">Central &amp; Eastern Europe <span>5</span></button><button type="button" class="chip" aria-pressed="false" data-filter="west" id="f-west">France, Italy &amp; Spain <span>7</span></button><button type="button" class="chip" aria-pressed="false" data-filter="north" id="f-north">The Nordics <span>5</span></button><button type="button" class="chip" aria-pressed="false" data-filter="isles" id="f-isles">Britain &amp; Ireland <span>6</span></button><button type="button" class="chip" aria-pressed="false" data-filter="luxury" id="f-luxury">Luxury &amp; tourist trains <span>6</span></button></nav>
+<section class="region" id="r-alpine" data-region="alpine">
+ <h2 class="sec-head"><span class="sec-name">Germany, Austria &amp; Switzerland</span><span class="sec-count">6 services</span></h2>
+ 
+ <div class="cards">
+<article class="card" id="db" data-region="alpine">
+ <header class="plate">
+  <span class="uic" title="UIC country code">80</span>
+  <div class="plate-text"><span class="op">Deutsche Bahn</span><span class="svc">ICE Bordrestaurant &amp; Bordbistro</span></div>
+ </header>
+ <div class="card-body">
+  <p class="where"><span class="country">Germany</span></p>
+  <p class="note">DB’s restaurant and bistro cars share one range and one price list; first class gets at-seat service. The menu exists only in digital form, on DB’s catering site and in the ICE Portal.</p>
+  <ul class="items">
+<li class="item">
+  <div class="line"><span class="dish" lang="de">Currywurst</span><span class="dots" aria-hidden="true"></span><span class="price">7,90 EUR</span></div>
+  <p class="desc" lang="de">mit Tortilla-Crunch &amp; Brötchen</p>
+  <p class="gloss">Sliced pork sausage in curry-spiced ketchup sauce, here with a tortilla crunch topping and a bread roll.</p>
+  <p class="why">A post-war Berlin street food and one of Germany’s best-known fast foods.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="de">Ditsch Butterbrezel</span><span class="dots" aria-hidden="true"></span><span class="price">3,90 EUR</span></div>
+  
+  <p class="gloss">Soft lye pretzel split and spread with butter, from the German pretzel bakery Ditsch.</p>
+  <p class="why">The buttered pretzel is the everyday south German snack of station bakeries and early trains.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="de">Krombacher Spezi</span><span class="dots" aria-hidden="true"></span><span class="price">3,90 EUR</span></div>
+  <p class="desc" lang="de">0,33 l Flasche</p>
+  <p class="gloss">Spezi: a cola-and-orange-lemonade mixed soft drink, here the Krombacher brand; 0.33 litre bottle.</p>
+  <p class="why">Cola mixed with orange lemonade is a German soft-drink category of its own, ordered by the generic name Spezi.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="de">Riesling Peter Stolleis</span><span class="dots" aria-hidden="true"></span><span class="price">8,90 EUR</span></div>
+  <p class="desc" lang="de">QbA, trocken, Pfalz, 0,25 l Flasche</p>
+  <p class="gloss">Dry Riesling quality wine (QbA) from the Pfalz (Palatinate) producer Peter Stolleis; 0.25 litre bottle.</p>
+  <p class="why">Riesling is Germany&#x27;s signature white grape and the Pfalz is one of its major wine regions.</p>
+</li>
+  </ul>
+  
+  <dl class="meta"><div><dt>Menu</dt><dd>Digital menu, no printed date. DB’s allergen booklet is headed “Bordgastronomie ab 29.07.2026”.</dd></div><div><dt>Language</dt><dd>Deutsch</dd></div><div><dt>Prices</dt><dd>EUR</dd></div></dl>
+  <div class="sources"><span class="src-label">Original menu</span><ul><li><a href="https://db-bordgastronomie.de/digitalespeisekarte" target="_blank" rel="noopener">Digital menu</a></li><li><a href="https://www.bahn.de/service/zug/bordgastronomie" target="_blank" rel="noopener">bahn.de: Bordgastronomie</a></li></ul></div>
+ </div>
+</article><article class="card" id="oebb-railjet" data-region="alpine">
+ <header class="plate">
+  <span class="uic" title="UIC country code">81</span>
+  <div class="plate-text"><span class="op">ÖBB</span><span class="svc">Railjet Bordrestaurant</span></div>
+ </header>
+ <div class="card-body">
+  <p class="where"><span class="country">Austria</span></p>
+  <p class="note">Catering on ÖBB long-distance trains comes from the Austrian caterer DoN’s. Railjets with a restaurant car also serve First and Business Class at the seat.</p>
+  <ul class="items">
+<li class="item">
+  <div class="line"><span class="dish" lang="de-AT">WIENER SCHNITZEL VOM SCHWEIN</span><span class="dots" aria-hidden="true"></span><span class="price">€ 15,90</span></div>
+  <p class="desc" lang="de-AT">Petersilerdäpfel</p>
+  <p class="gloss">Breaded, fried Viennese-style pork escalope with parsley potatoes.</p>
+  <p class="why">Austria’s best-known dish. Austrian food labelling reserves plain “Wiener Schnitzel” for veal, which is why this one says “vom Schwein” (pork).</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="de-AT">TIROLER GRÖSTL</span><span class="dots" aria-hidden="true"></span><span class="price">€ 14,50</span></div>
+  <p class="desc" lang="de-AT">Warmer Krautsalat</p>
+  <p class="gloss">Tyrolean fry-up of sliced potatoes, bacon and ham, with warm cabbage salad; marked organic (BIO).</p>
+  <p class="why">A Tyrolean farmhouse and mountain-hut dish, first made to use up leftovers.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="de-AT">GULASCHSUPPE OMA SCHÜLLER</span><span class="dots" aria-hidden="true"></span><span class="price">€ 8,90</span></div>
+  <p class="desc" lang="de-AT">Rindfleisch | geräucherte Wurst | Wurzelgemüse Erdäpfel | Majoran | Kaisersemmel</p>
+  <p class="gloss">&quot;Granny Schüller&#x27;s&quot; goulash soup with beef, smoked sausage, root vegetables, potatoes and marjoram, with a Kaiser roll.</p>
+  <p class="why">Goulash came to Austria from Hungary and became a staple of Viennese cooking; goulash soup is a classic Austrian café and inn dish.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="de-AT">APFELSTRUDEL</span><span class="dots" aria-hidden="true"></span><span class="price">€ 8,90</span></div>
+  <p class="desc" lang="de-AT">aus der DoN Patisserie in Linz | Vanillesauce</p>
+  <p class="gloss">Apple strudel from the caterer&#x27;s patisserie in Linz, with vanilla sauce.</p>
+  <p class="why">Apfelstrudel is one of the emblematic desserts of Viennese and Austrian cuisine.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="de-AT">MELANGE | CAPPUCCINO</span><span class="dots" aria-hidden="true"></span><span class="price">€ 4,80</span></div>
+  
+  <p class="gloss">Melange: Viennese coffee with foamed milk (sold at one price with cappuccino).</p>
+  <p class="why">The house drink of the Viennese coffee-house tradition.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="de-AT">ALMDUDLER 0,35 l</span><span class="dots" aria-hidden="true"></span><span class="price">€ 4,50</span></div>
+  
+  <p class="gloss">Austrian herbal lemonade (the menu&#x27;s English: &quot;Herb lemonade&quot;); 0.35 litre.</p>
+  <p class="why">Austria’s home-grown herbal lemonade. The menu’s own advert reads “Das Original. Seit 1957.”</p>
+</li>
+  </ul>
+  <p class="caveat">Cash prices shown. Each item has a slightly lower price for card payment (“Karte zücken, Preise drücken”).</p>
+  <dl class="meta"><div><dt>Menu</dt><dd>Printed “Menü Herbst”, “Version 2.0 2026-09”.</dd></div><div><dt>Language</dt><dd>Deutsch (Österreich)</dd></div><div><dt>Prices</dt><dd>EUR (CHF also printed)</dd></div><div><dt>Caterer</dt><dd>DoN’s</dd></div></dl>
+  <div class="sources"><span class="src-label">Original menu</span><ul><li><a href="https://www.oebb.at/dam/jcr:17e4b6bd-f5d0-4fe1-8e9a-a47a7abae5dd/folder-don-restaurantkarte.pdf" target="_blank" rel="noopener">Restaurant menu (PDF)</a></li><li><a href="https://www.oebb.at/de/reiseplanung-services/im-zug/bordservice" target="_blank" rel="noopener">oebb.at: Bordservice</a></li></ul></div>
+ </div>
+</article><article class="card" id="nightjet" data-region="alpine">
+ <header class="plate">
+  <span class="uic" title="UIC country code">81</span>
+  <div class="plate-text"><span class="op">ÖBB Nightjet</span><span class="svc">Sleeper menu (Schlafwagen &amp; Liegewagen)</span></div>
+ </header>
+ <div class="card-body">
+  <p class="where"><span class="country">Austria</span></p>
+  <p class="note">ÖBB’s night-train network serves more than 25 European cities. Sleeping-car passengers choose six breakfast items that come with the berth, served in the compartment.</p>
+  <ul class="items">
+<li class="item">
+  <div class="line"><span class="dish" lang="de-AT">Kalbsbutterschnitzerl mit Erdäpfelstampf</span><span class="dots" aria-hidden="true"></span><span class="price">€ 11,90 / CHF 11.20</span></div>
+  
+  <p class="gloss">Minced-veal &quot;butter schnitzel&quot; patties with mashed potatoes.</p>
+  <p class="why">A Viennese home-cooking classic. “Erdäpfel” and the diminutive “-erl” mark it as Austrian German.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="de-AT">Vegane Gulaschsuppe mit Brot</span><span class="dots" aria-hidden="true"></span><span class="price">€ 7,60 / CHF 7.10</span></div>
+  
+  <p class="gloss">Vegan goulash soup with bread.</p>
+  <p class="why">A meat-free version of goulash soup, the classic late-night dish of Austrian inns and train buffets.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="de-AT">Bründlmayer Grüner Veltliner Terrassen 0,375L</span><span class="dots" aria-hidden="true"></span><span class="price">€ 11,50 / CHF 10.80</span></div>
+  
+  <p class="gloss">Grüner Veltliner white wine from the Austrian estate Bründlmayer; 0.375 litre bottle.</p>
+  <p class="why">Grüner Veltliner is Austria&#x27;s signature white grape variety.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="de-AT">Umathum Zweigelt 0,375L</span><span class="dots" aria-hidden="true"></span><span class="price">€ 11,50 / CHF 10.80</span></div>
+  
+  <p class="gloss">Zweigelt red wine from the Austrian producer Umathum; 0.375 litre bottle.</p>
+  <p class="why">Zweigelt, an Austrian crossing bred in the 1920s, is Austria&#x27;s most widely planted red grape.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="de-AT">Manner Original Neapolitaner Schnitten 75g</span><span class="dots" aria-hidden="true"></span><span class="price">€ 2,60 / CHF 2.40</span></div>
+  
+  <p class="gloss">Manner hazelnut-cream wafers, 75 g pack.</p>
+  <p class="why">Manner&#x27;s pink-packed Neapolitaner wafers are a Viennese confectionery icon, made in Vienna since the late 19th century.</p>
+</li>
+  </ul>
+  
+  <dl class="meta"><div><dt>Menu</dt><dd>Printed “Menükarte ab Februar 2026”.</dd></div><div><dt>Language</dt><dd>Deutsch (Österreich)</dd></div><div><dt>Prices</dt><dd>EUR / CHF</dd></div><div><dt>Caterer</dt><dd>Newrest Wagon-Lits</dd></div></dl>
+  <div class="sources"><span class="src-label">Original menu</span><ul><li><a href="https://www.nightjet.com/de/dam/jcr:57df4df9-c7b6-45f6-8adc-7d850bf914b4/speisekarte-schlafwagen-liegewagen.pdf" target="_blank" rel="noopener">Sleeper menu (PDF)</a></li><li><a href="https://www.nightjet.com/de/komfortkategorien/schlafwagen" target="_blank" rel="noopener">nightjet.com: Schlafwagen</a></li></ul></div>
+ </div>
+</article><article class="card" id="sbb" data-region="alpine">
+ <header class="plate">
+  <span class="uic" title="UIC country code">85</span>
+  <div class="plate-text"><span class="op">SBB</span><span class="svc">SBB Restaurant (dining car)</span></div>
+ </header>
+ <div class="card-body">
+  <p class="where"><span class="country">Switzerland</span></p>
+  <p class="note">Swiss dining cars are run by the SBB subsidiary Elvetino and marked in the timetable. The euro prices on the card use the exchange rate of 14 April 2026.</p>
+  <ul class="items">
+<li class="item">
+  <div class="line"><span class="dish" lang="de-CH">Typisch Schweiz: Ghackets mit Hörnli</span><span class="dots" aria-hidden="true"></span><span class="price">CHF 23.50 / EUR 25,–</span></div>
+  <p class="desc" lang="de-CH">Rindfleisch mit Hörnli, Röstzwiebeln, Apfelmus und Sbrinz</p>
+  <p class="gloss">Minced beef with elbow macaroni, fried onions, apple sauce and Sbrinz cheese.</p>
+  <p class="why">Ghackets mit Hörnli is a Swiss comfort-food classic, traditionally eaten with apple sauce; Sbrinz is a Swiss hard cheese.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="de-CH">Rüebli-Ingwer-Suppe</span><span class="dots" aria-hidden="true"></span><span class="price">CHF 9.90 / EUR 10,60</span></div>
+  
+  <p class="gloss">Carrot and ginger soup (vegan).</p>
+  <p class="why">“Rüebli” is Swiss German for carrots: dialect vocabulary that marks a Swiss menu apart from a German one.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="de-CH">Bündner Nusstorte</span><span class="dots" aria-hidden="true"></span><span class="price">CHF 7.50 / EUR 8,–</span></div>
+  <p class="desc" lang="de-CH">Traditionell gebackene Bündner Nusstorte</p>
+  <p class="gloss">Traditionally baked Graubünden nut tart: a shortcrust pie filled with caramelised walnuts.</p>
+  <p class="why">The walnut tart is the signature pastry of the canton of Graubünden (Grisons), especially the Engadine.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="de-CH">Ovomaltine</span><span class="dots" aria-hidden="true"></span><span class="price">CHF 5.30 / EUR 5,60</span></div>
+  
+  <p class="gloss">Hot malted chocolate drink (Ovomaltine, known as Ovaltine elsewhere).</p>
+  <p class="why">The malted drink was developed in Bern in the early 1900s and sold abroad as Ovaltine.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="de-CH">Rivella Rot</span><span class="dots" aria-hidden="true"></span><span class="price">CHF 5.50 / EUR 5,80</span></div>
+  <p class="desc" lang="de-CH">5 dl</p>
+  <p class="gloss">Rivella Red, the original Swiss soft drink made with milk whey; 5 dl.</p>
+  <p class="why">Rivella, launched in 1952, is widely regarded as Switzerland&#x27;s national soft drink.</p>
+</li>
+  </ul>
+  
+  <dl class="meta"><div><dt>Menu</dt><dd>Printed “Diese Speisekarte ist ab September 2026 gültig.” (cover: “Herbst”).</dd></div><div><dt>Language</dt><dd>Deutsch (Schweiz)</dd></div><div><dt>Prices</dt><dd>CHF / EUR</dd></div><div><dt>Caterer</dt><dd>Elvetino</dd></div></dl>
+  <div class="sources"><span class="src-label">Original menu</span><ul><li><a href="https://www.sbb.ch/content/dam/internet/sbb/downloads/de/reiseinformationen/zug-services/speise-getraenkekarte.pdf.sbbdownload.pdf" target="_blank" rel="noopener">Menu (PDF)</a></li><li><a href="https://www.sbb.ch/de/reiseinformationen/services-im-zug/sbb-restaurant-bistro/speisekarte.html" target="_blank" rel="noopener">sbb.ch: Speise- und Getränkekarte</a></li></ul></div>
+ </div>
+</article><article class="card" id="glacier" data-region="alpine">
+ <header class="plate">
+  <span class="uic" title="UIC country code">85</span>
+  <div class="plate-text"><span class="op">Glacier Express</span><span class="svc">At-seat menu, 1st &amp; 2nd class</span></div>
+ </header>
+ <div class="card-body">
+  <p class="where"><span class="country">Switzerland</span><span class="route">Zermatt – St. Moritz</span></p>
+  <p class="note">Meals come from the on-board kitchen and are served at the seat. The menu calls the train the “langsamsten Schnellzug der Welt” and describes the Schnapsakrobatik: digestifs poured from about 60 cm while the train is moving.</p>
+  <ul class="items">
+<li class="item">
+  <div class="line"><span class="dish" lang="de-CH">BÜNDNER GERSTENSUPPE</span><span class="dots" aria-hidden="true"></span><span class="price">CHF 15.00</span></div>
+  <p class="desc" lang="de-CH">mit Bündnerfleisch</p>
+  <p class="gloss">Graubünden barley soup with air-dried Graubünden beef.</p>
+  <p class="why">Barley soup (Gerstensuppe) is the classic soup of Graubünden, and Bündnerfleisch is the canton&#x27;s famous air-dried beef.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="de-CH">ÄLPLER ZVIERI</span><span class="dots" aria-hidden="true"></span><span class="price">CHF 24.00</span></div>
+  <p class="desc" lang="de-CH">mit Bündner Salsiz, Bündner Bergkäse, Essiggurken, Silberzwiebeln</p>
+  <p class="gloss">Alpine snack plate with Graubünden Salsiz (small air-dried sausage), Graubünden mountain cheese, pickled gherkins and pickled silver onions.</p>
+  <p class="why">&quot;Zvieri&quot; is the Swiss German word for the mid-afternoon snack (literally &quot;at four&quot;), and the Älpler (Alpine herdsman&#x27;s) version is a cold plate of cured meat and cheese.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="de-CH">CHURER RÖTELI</span><span class="dots" aria-hidden="true"></span><span class="price">CHF 9.00 (2 cl)</span></div>
+  <p class="desc" lang="de-CH">(FAMILIE ULLIUS, CHUR)</p>
+  <p class="gloss">Röteli: a cherry liqueur from Chur, made by the Ullius family; served as a 2 cl digestif.</p>
+  <p class="why">A Graubünden cherry liqueur traditionally drunk at New Year, and one of the digestifs poured from a height on board.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="de-CH">HEIDI WII MAIENFELDER PINOT NOIR</span><span class="dots" aria-hidden="true"></span><span class="price">CHF 9.00 (1 dl); CHF 38.00 (5 dl)</span></div>
+  <p class="desc" lang="de-CH">(VON SALIS, MAIENFELD)</p>
+  <p class="gloss">&quot;Heidi wine&quot;: Pinot Noir from Maienfeld (producer von Salis).</p>
+  <p class="why">Maienfeld, in the Bündner Herrschaft wine area, is where Johanna Spyri set Heidi, hence the name.</p>
+</li>
+  </ul>
+  
+  <dl class="meta"><div><dt>Menu</dt><dd>Printed “April 2026, V19”.</dd></div><div><dt>Language</dt><dd>Deutsch (Schweiz)</dd></div><div><dt>Prices</dt><dd>CHF</dd></div><div><dt>Caterer</dt><dd>Panoramic Gourmet AG</dd></div></dl>
+  <div class="sources"><span class="src-label">Original menu</span><ul><li><a href="https://glacierexpress.ch/GEX_menu_complete_2026.pdf" target="_blank" rel="noopener">Menu 2026 (PDF)</a></li><li><a href="https://glacierexpress.ch/GEX_beverages_only_2026.pdf" target="_blank" rel="noopener">Drinks 2026 (PDF)</a></li><li><a href="https://glacierexpress.ch/en/gastronomy" target="_blank" rel="noopener">glacierexpress.ch: Gastronomy</a></li></ul></div>
+ </div>
+</article><article class="card" id="bernina" data-region="alpine">
+ <header class="plate">
+  <span class="uic" title="UIC country code">85</span>
+  <div class="plate-text"><span class="op">Rhaetian Railway (RhB)</span><span class="svc">Bernina Express trolley</span></div>
+ </header>
+ <div class="card-body">
+  <p class="where"><span class="country">Switzerland / Italy</span><span class="route">Chur / St. Moritz – Tirano</span></p>
+  <p class="note">Snacks and drinks from local producers along the UNESCO-listed Albula and Bernina line. The trolley card is cashless.</p>
+  <ul class="items">
+<li class="item">
+  <div class="line"><span class="dish" lang="de-CH">Tuorta da Nusch (Nusstorte) der Bäckerei-Bad, St. Moritz</span><span class="dots" aria-hidden="true"></span><span class="price">CHF 7.00</span></div>
+  <p class="desc" lang="de-CH">100g</p>
+  <p class="gloss">Engadine nut tart (the Romansh name &quot;Tuorta da Nusch&quot; means nut tart) from the Bäckerei-Bad in St. Moritz.</p>
+  <p class="why">The Engadine walnut tart under its Romansh name. Romansh, Switzerland’s fourth national language, is spoken in the Engadine where the line climbs.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="de-CH">Birabrot und Churer Hof-Käse</span><span class="dots" aria-hidden="true"></span><span class="price">CHF 12.00</span></div>
+  <p class="desc" lang="de-CH">155g</p>
+  <p class="gloss">Graubünden pear bread (Birabrot: a dense loaf of dried pears, nuts and dried fruit in a bread casing) with farmhouse cheese from Chur.</p>
+  <p class="why">Pear bread is a traditional Graubünden speciality.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="de-CH">Iva Engadiner Kräuterlikör, Familie Brechbühl, Tschlin</span><span class="dots" aria-hidden="true"></span><span class="price">CHF 12.00</span></div>
+  <p class="desc" lang="de-CH">26.9% Vol. 5cl</p>
+  <p class="gloss">Iva, an Engadine herbal liqueur, from the Brechbühl family in Tschlin (Lower Engadine).</p>
+  <p class="why">Iva is flavoured with musk yarrow, an Alpine plant, and is the signature liqueur of the Engadine valley the train runs through.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="de-CH">Calanda Edelbräu, Chur</span><span class="dots" aria-hidden="true"></span><span class="price">CHF 6.00 (3.3dl)</span></div>
+  
+  <p class="gloss">Calanda speciality lager from the brewery in Chur, the capital of Graubünden.</p>
+  <p class="why">Brewed in Chur, Graubünden’s capital, and named after the Calanda mountain above the city.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="de-CH">Alpi Retiche IGT, La Gatta Riserva</span><span class="dots" aria-hidden="true"></span><span class="price">CHF 28.00 (5dl)</span></div>
+  <p class="desc" lang="de-CH">La Gatta, Casa Vinicola Triacca, Tirano</p>
+  <p class="gloss">Red wine (Alpi Retiche IGT) from the Triacca winery’s La Gatta estate at Bianzone, near Tirano, Lombardy.</p>
+  <p class="why">Tirano, in Italy’s Valtellina, is the line’s southern terminus; Triacca’s La Gatta estate is at nearby Bianzone.</p>
+</li>
+  </ul>
+  
+  <dl class="meta"><div><dt>Menu</dt><dd>No printed date; file name “v.Feb25”. Still the card linked from rhb.ch.</dd></div><div><dt>Language</dt><dd>Deutsch (Schweiz)</dd></div><div><dt>Prices</dt><dd>CHF</dd></div><div><dt>Caterer</dt><dd>Panoramic Gourmet AG</dd></div></dl>
+  <div class="sources"><span class="src-label">Original menu</span><ul><li><a href="https://assets.eu.ctfassets.net/h76myjvzsgnd/7fQHMzDoFSo80JGrXKxNxM/296801e70efb211555ed4e8160279dcf/PGAG_BEX_Angebotskarte_v.Feb25__2_.pdf" target="_blank" rel="noopener">Trolley card (PDF)</a></li><li><a href="https://www.rhb.ch/en/service/dining-on-the-move/" target="_blank" rel="noopener">rhb.ch: Dining on the move</a></li></ul></div>
+ </div>
+</article>
+ </div>
+</section>
+<section class="region" id="r-east" data-region="east">
+ <h2 class="sec-head"><span class="sec-name">Central &amp; Eastern Europe</span><span class="sec-count">5 services</span></h2>
+ 
+ <div class="cards">
+<article class="card" id="cd" data-region="east">
+ <header class="plate">
+  <span class="uic" title="UIC country code">54</span>
+  <div class="plate-text"><span class="op">České dráhy (ČD)</span><span class="svc">ČD Restaurant, ComfortJet restaurant car</span></div>
+ </header>
+ <div class="card-body">
+  <p class="where"><span class="country">Czechia</span></p>
+  <p class="note">ČD’s dining cars run as ČD Restaurant, operated by JLV of Prague. The menu carries Czech Specials, a certification mark for traditional Czech cooking.</p>
+  <ul class="items">
+<li class="item">
+  <div class="line"><span class="dish" lang="cs">Svíčková na smetaně s houskovým knedlíkem, brusinky</span><span class="dots" aria-hidden="true"></span><span class="price">366 Kč</span></div>
+  
+  <p class="gloss">Braised beef sirloin in a cream and root-vegetable sauce, with bread dumplings and lingonberries (brusinky).</p>
+  <p class="why">One of the Czech national dishes, and the benchmark order in a Czech dining car.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="cs">Gulášová polévka, pečivo</span><span class="dots" aria-hidden="true"></span><span class="price">182 Kč</span></div>
+  
+  <p class="gloss">Goulash soup with bread</p>
+  <p class="why">Gulášová polévka, a paprika-spiced beef soup of Hungarian origin, is a fixture of Czech pub and canteen menus.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="cs">Pilsner Urquell</span><span class="dots" aria-hidden="true"></span><span class="price">127 Kč</span></div>
+  <p class="desc" lang="cs">Čepované</p>
+  <p class="gloss">Pilsner Urquell on draught (0,30 l).</p>
+  <p class="why">First brewed in Plzeň in 1842, the original pale lager from which “pilsner” takes its name.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="cs">Medovník Original Karamel</span><span class="dots" aria-hidden="true"></span><span class="price">196 Kč</span></div>
+  
+  <p class="gloss">Caramel honey layer cake</p>
+  <p class="why">Medovník, a multi-layered honey cake with cream filling, is a staple of Czech and Slovak cafés and patisseries.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="cs">Hořické trubičky čokoládové</span><span class="dots" aria-hidden="true"></span><span class="price">60 Kč</span></div>
+  <p class="desc" lang="cs">Original ČD Restaurant</p>
+  <p class="gloss">Hořice wafer tubes with chocolate filling</p>
+  <p class="why">Rolled wafer tubes from Hořice in north-east Bohemia, protected in the EU as a Geographical Indication.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="cs">Slivovice R. Jelínek</span><span class="dots" aria-hidden="true"></span><span class="price">136 Kč</span></div>
+  
+  <p class="gloss">Plum brandy from the R. Jelínek distillery (0,05 l).</p>
+  <p class="why">Slivovice (plum brandy) is the emblematic Czech fruit spirit, especially associated with Moravia; R. Jelínek is a long-established distillery in Vizovice, Moravia.</p>
+</li>
+  </ul>
+  <p class="caveat">Regular prices shown. Every item also has a lower “Happy Hours” price on listed trains (svíčková: 249 Kč).</p>
+  <dl class="meta"><div><dt>Menu</dt><dd>No printed date (PDF created 23 Sept 2026).</dd></div><div><dt>Language</dt><dd>Čeština</dd></div><div><dt>Prices</dt><dd>CZK (also EUR, HUF, DKK)</dd></div><div><dt>Caterer</dt><dd>JLV, a.s.</dd></div></dl>
+  <div class="sources"><span class="src-label">Original menu</span><ul><li><a href="https://jidelnivozy.cz/menu/doc/restaurantcomfortjet.pdf" target="_blank" rel="noopener">ComfortJet menu (PDF)</a></li><li><a href="https://www.cd.cz/dalsi-sluzby/jidelni-vozy-a-obcerstveni-ve-vlaku/-26738/" target="_blank" rel="noopener">cd.cz: Jídelní vozy</a></li></ul></div>
+ </div>
+</article><article class="card" id="zssk" data-region="east">
+ <header class="plate">
+  <span class="uic" title="UIC country code">56</span>
+  <div class="plate-text"><span class="op">ZSSK</span><span class="svc">Restaurant car (reštauračný vozeň)</span></div>
+ </header>
+ <div class="card-body">
+  <p class="where"><span class="country">Slovakia</span><span class="route">Košice – Žilina – Bratislava</span></p>
+  <p class="note">Slovakia’s domestic restaurant cars run with the caterer Wagon Slovakia Košice on express trains across the country. First class can order to the seat by QR code.</p>
+  <ul class="items">
+<li class="item">
+  <div class="line"><span class="dish" lang="sk">VYPRÁŽANÝ SYR</span><span class="dots" aria-hidden="true"></span><span class="price">6,90 €</span></div>
+  <p class="desc" lang="sk">omáčka podľa výberu</p>
+  <p class="gloss">Fried breaded cheese, with a sauce of your choice</p>
+  <p class="why">Breaded, deep-fried cheese (usually served with tartar sauce) is a staple of Slovak and Czech restaurant and canteen menus.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="sk">POCTIVÝ MAĎARSKÝ HOVÄDZÍ GULÁŠ</span><span class="dots" aria-hidden="true"></span><span class="price">12,90 €</span></div>
+  <p class="desc" lang="sk">domáca knedľa</p>
+  <p class="gloss">Hearty Hungarian beef goulash with homemade dumpling</p>
+  <p class="why">Goulash with dumplings is one of the most common hot dishes across Slovakia, reflecting the country&#x27;s long shared history with Hungary.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="sk">TRADIČNÝ SLEPAČÍ VÝVAR S REZANCAMI</span><span class="dots" aria-hidden="true"></span><span class="price">4,90 €</span></div>
+  
+  <p class="gloss">Traditional hen broth with noodles</p>
+  <p class="why">Chicken or hen broth with thin noodles is the classic Slovak Sunday-lunch starter.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="sk">ŠARIŠ 10°</span><span class="dots" aria-hidden="true"></span><span class="price">1,45 €, 0,5 l</span></div>
+  
+  <p class="gloss">Šariš 10° lager (canned)</p>
+  <p class="why">Brewed in Veľký Šariš in eastern Slovakia. The “10°” is the traditional Czech and Slovak measure of original gravity.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="sk">BOROVIČKA DOMOVINA 45%</span><span class="dots" aria-hidden="true"></span><span class="price">3,90 €, 0,04 l</span></div>
+  
+  <p class="gloss">Borovička (juniper spirit), Domovina brand</p>
+  <p class="why">Borovička, a juniper-flavoured spirit, is the traditional Slovak shot.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="sk">TATRATEA 52%</span><span class="dots" aria-hidden="true"></span><span class="price">3,90 €, 0,04 l</span></div>
+  
+  <p class="gloss">Tatratea tea-based liqueur, 52%</p>
+  <p class="why">A Slovak tea-based liqueur named after the Tatra mountains.</p>
+</li>
+  </ul>
+  <p class="caveat">The autumn insert adds “Domáca držková polievka” (homemade tripe soup), 4,90 €.</p>
+  <dl class="meta"><div><dt>Menu</dt><dd>Printed “september 2026”.</dd></div><div><dt>Language</dt><dd>Slovenčina</dd></div><div><dt>Prices</dt><dd>EUR</dd></div><div><dt>Caterer</dt><dd>Wagon Slovakia Košice</dd></div></dl>
+  <div class="sources"><span class="src-label">Original menu</span><ul><li><a href="https://wgske.sk/wp-content/uploads/2026/09/WAGON_MENU_september_2026.pdf" target="_blank" rel="noopener">September menu (PDF)</a></li><li><a href="https://www.zssk.sk/sluzby/sluzby-vo-vlaku/restauracne-vozne/" target="_blank" rel="noopener">zssk.sk: Reštauračné vozne</a></li></ul></div>
+ </div>
+</article><article class="card" id="wars" data-region="east">
+ <header class="plate">
+  <span class="uic" title="UIC country code">51</span>
+  <div class="plate-text"><span class="op">PKP Intercity – WARS</span><span class="svc">WARS restaurant car, EIP &amp; EIC trains</span></div>
+ </header>
+ <div class="card-body">
+  <p class="where"><span class="country">Poland</span></p>
+  <p class="note">WARS runs the restaurant cars on PKP Intercity’s premium trains. Food can also be ordered from the seat through the mWars app.</p>
+  <ul class="items">
+<li class="item">
+  <div class="line"><span class="dish" lang="pl">Żurek na zakwasie</span><span class="dots" aria-hidden="true"></span><span class="price">18 zł</span></div>
+  <p class="desc" lang="pl">żurek, jajko gotowane, biała kiełbasa, cebula, boczek, czosnek, chrzan, majeranek, pieczywo</p>
+  <p class="gloss">Sour rye soup made with a fermented starter, with egg and white sausage</p>
+  <p class="why">Soup soured with fermented rye, one of Poland’s national dishes. WARS marks it a bestseller.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="pl">Tradycyjny kotlet schabowy z mizerią</span><span class="dots" aria-hidden="true"></span><span class="price">44 zł</span></div>
+  <p class="desc" lang="pl">kotlet schabowy, ziemniaki, mizeria, koperek</p>
+  <p class="gloss">Traditional breaded pork cutlet with cucumber salad</p>
+  <p class="why">The breaded pork cutlet with potatoes and mizeria (cucumber in soured cream) is the archetypal Polish Sunday dinner. Also marked a bestseller.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="pl">Pierogi z serem, ziemniakami i rumianą cebulą</span><span class="dots" aria-hidden="true"></span><span class="price">32 zł</span></div>
+  <p class="desc" lang="pl">pierogi z nadzieniem ziemniaczano-twarogowym, cebula</p>
+  <p class="gloss">Pierogi with cheese, potato and golden fried onion</p>
+  <p class="why">Potato and curd-cheese pierogi, the style Poles call ruskie, are the country’s most popular dumplings.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="pl">Gołąbki wegańskie</span><span class="dots" aria-hidden="true"></span><span class="price">35 zł</span></div>
+  <p class="desc" lang="pl">gołąbki z kaszą, pieczarkami i sosem, koperek</p>
+  <p class="gloss">Vegan stuffed cabbage rolls with barley and mushrooms</p>
+  <p class="why">Gołąbki (cabbage rolls) are a Polish home-cooking classic; this is a plant-based version filled with groats and mushrooms.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="pl">Sernik z polewą malinową</span><span class="dots" aria-hidden="true"></span><span class="price">15 zł</span></div>
+  
+  <p class="gloss">Cheesecake with raspberry topping</p>
+  <p class="why">Sernik, baked cheesecake made with twaróg curd cheese, is one of Poland&#x27;s best-loved cakes.</p>
+</li>
+  </ul>
+  <p class="caveat">Spring–summer menu; no autumn menu was online on 27 September 2026.</p>
+  <dl class="meta"><div><dt>Menu</dt><dd>Printed “wiosna-lato 2026” (spring–summer), “MAJ 2026”.</dd></div><div><dt>Language</dt><dd>Polski</dd></div><div><dt>Prices</dt><dd>PLN</dd></div><div><dt>Caterer</dt><dd>WARS S.A.</dd></div></dl>
+  <div class="sources"><span class="src-label">Original menu</span><ul><li><a href="https://wars.pl/wp-content/uploads/2026/06/Menu-EIP-EIC-135x270-Wiosna-2026-PL-PLN-DRUK.pdf" target="_blank" rel="noopener">EIP/EIC menu (PDF)</a></li><li><a href="https://wars.pl/oferta/" target="_blank" rel="noopener">wars.pl: Oferta</a></li></ul></div>
+ </div>
+</article><article class="card" id="mav" data-region="east">
+ <header class="plate">
+  <span class="uic" title="UIC country code">55</span>
+  <div class="plate-text"><span class="op">MÁV (Utasellátó)</span><span class="svc">Dining car, Budapest – Wien EuroCity</span></div>
+ </header>
+ <div class="card-body">
+  <p class="where"><span class="country">Hungary</span></p>
+  <p class="note">Hungarian dining cars trade under the old Utasellátó name. The Budapest–Vienna EuroCity trains carry a full dining car.</p>
+  <ul class="items">
+<li class="item">
+  <div class="line"><span class="dish" lang="hu">Gulyásleves</span><span class="dots" aria-hidden="true"></span><span class="price">3 145 Ft</span></div>
+  
+  <p class="gloss">Goulash soup</p>
+  <p class="why">Paprika beef soup named after the gulyás, Hungary’s cattle herdsmen, and the name the rest of Europe borrowed for its goulash.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="hu">Paprikás csirke</span><span class="dots" aria-hidden="true"></span><span class="price">4 625 Ft</span></div>
+  <p class="desc" lang="hu">galuskával</p>
+  <p class="gloss">Chicken paprikash with dumplings</p>
+  <p class="why">Chicken stewed in paprika and soured cream, served with small galuska dumplings, is a classic of Hungarian home cooking.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="hu">Hortobágyi palacsinta</span><span class="dots" aria-hidden="true"></span><span class="price">2 220 Ft</span></div>
+  
+  <p class="gloss">Hortobágy-style pancake (savoury meat-filled crêpe in paprika sauce)</p>
+  <p class="why">Named after the Hortobágy plain, these crêpes filled with meat and baked in a paprika-cream sauce are a well-known Hungarian starter.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="hu">Somlói galuska</span><span class="dots" aria-hidden="true"></span><span class="price">1 665 Ft</span></div>
+  
+  <p class="gloss">Somló-style trifle (sponge with chocolate sauce and cream)</p>
+  <p class="why">Somlói galuska, layered sponge with walnuts, chocolate sauce and whipped cream, is one of Hungary&#x27;s signature desserts.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="hu">Zwack Unicum (0,04 l)</span><span class="dots" aria-hidden="true"></span><span class="price">1 850 Ft</span></div>
+  
+  <p class="gloss">Zwack Unicum herbal bitter liqueur</p>
+  <p class="why">Unicum is Hungary&#x27;s national herbal bitter, made by the Zwack family firm in Budapest to a secret recipe.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="hu">Tokaji Aszú 2013 (Grand Tokaji | 0,25 l)</span><span class="dots" aria-hidden="true"></span><span class="price">6 290 Ft</span></div>
+  <p class="desc" lang="hu">édes fehérbor</p>
+  <p class="gloss">Tokaji Aszú 2013 sweet white wine</p>
+  <p class="why">The botrytised sweet wine of Tokaj, whose vineyard landscape is a UNESCO World Heritage Site.</p>
+</li>
+  </ul>
+  
+  <dl class="meta"><div><dt>Menu</dt><dd>No printed date; menu code “WR2 – 2606”.</dd></div><div><dt>Language</dt><dd>Magyar</dd></div><div><dt>Prices</dt><dd>HUF (also EUR, RON)</dd></div><div><dt>Caterer</dt><dd>Utasellátó</dd></div></dl>
+  <div class="sources"><span class="src-label">Original menu</span><ul><li><a href="https://www.mavcsoport.hu/sites/default/files/upload/travel-offer/document/public/wr2.pdf" target="_blank" rel="noopener">Route menu WR2 (PDF)</a></li><li><a href="https://www.mavcsoport.hu/mav-szemelyszallitas/szolgaltatasok/utasellato-etkezokocsik" target="_blank" rel="noopener">mavcsoport.hu: Étkezőkocsik</a></li></ul></div>
+ </div>
+</article><article class="card" id="cfr" data-region="east">
+ <header class="plate">
+  <span class="uic" title="UIC country code">53</span>
+  <div class="plate-text"><span class="op">CFR Călători</span><span class="svc">Bar-bistro car</span></div>
+ </header>
+ <div class="card-body">
+  <p class="where"><span class="country">Romania</span><span class="route">București Nord – Arad</span></p>
+  <p class="note">Of CFR’s bar coaches, only the modernised bar-bistro car on the Bucharest–Arad trains serves hot food.</p>
+  <ul class="items">
+<li class="item">
+  <div class="line"><span class="dish" lang="ro">Olteneşti la grătar cu cartofi natur şi salată de sfeclă roşie cu hrean</span><span class="dots" aria-hidden="true"></span><span class="price">39,00 lei</span></div>
+  <p class="desc" lang="ro">cârnaţi olteneşti semiafumaţi din carne de porc şi vită / cartofi, unt / sfeclă roşie, rădăcină de hrean, oţet, zahăr, ulei, sare</p>
+  <p class="gloss">Grilled Oltenian sausages with boiled potatoes and beetroot-horseradish salad</p>
+  <p class="why">Olteneşti are semi-smoked pork-and-beef sausages named after the Oltenia region of southern Romania, a common grill dish.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="ro">Ceafă de porc cu cartofi natur şi salată de castraveţi cu gogoşari oţet</span><span class="dots" aria-hidden="true"></span><span class="price">44,00 lei</span></div>
+  <p class="desc" lang="ro">ceafă de porc fără os / cartofi, unt / castraveţi, gogoşari, oţet, zahăr, muştar boabe, piper boabe, ulei, sare</p>
+  <p class="gloss">Pork neck with boiled potatoes and pickled cucumber and gogoșari pepper salad</p>
+  <p class="why">Grilled pork neck (ceafă) is a staple of Romanian grill menus, and gogoșari (round red peppers) pickled in vinegar are a classic Romanian side.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="ro">Sandwich cu salam de Sibiu, unt și castraveţi</span><span class="dots" aria-hidden="true"></span><span class="price">12,00 lei</span></div>
+  
+  <p class="gloss">Sibiu salami sandwich with butter and cucumber</p>
+  <p class="why">Salam de Sibiu, a dry-cured, mould-ripened salami, is one of Romania&#x27;s best-known cured meats and holds EU Protected Geographical Indication status.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="ro">Caşcaval pané cu cartofi prăjiţi şi salată de ardei kapija copţi</span><span class="dots" aria-hidden="true"></span><span class="price">38,00 lei</span></div>
+  <p class="desc" lang="ro">caşcaval, ouă, pesmet, făină, curcuma / cartofi / ardei Kapija roşu, oţet, zahăr, foi dafin, piper boabe, ulei, sare</p>
+  <p class="gloss">Breaded fried cașcaval cheese with chips and roasted kapija pepper salad</p>
+  <p class="why">Cașcaval pane (breaded fried cheese) is a popular dish in Romanian restaurants and canteens.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="ro">Bristena</span><span class="dots" aria-hidden="true"></span><span class="price">55,00 lei (750 ml)</span></div>
+  <p class="desc" lang="ro">Tămâioasă Românească</p>
+  <p class="gloss">Bristena wine, Tămâioasă Românească grape</p>
+  <p class="why">Tămâioasă Românească is Romania’s name for the aromatic Muscat Blanc à Petits Grains, usually made sweet or semi-sweet there.</p>
+</li>
+  </ul>
+  <p class="caveat">Published as a web page. Diacritics are kept as published, which mixes the ş and ș forms.</p>
+  <dl class="meta"><div><dt>Menu</dt><dd>Printed “PREȚURI VALABILE DE LA 01.07.2025”.</dd></div><div><dt>Language</dt><dd>Română</dd></div><div><dt>Prices</dt><dd>RON (lei)</dd></div></dl>
+  <div class="sources"><span class="src-label">Original menu</span><ul><li><a href="https://www.cfrcalatori.ro/meniu-bar-bistro-vagon-89-70/" target="_blank" rel="noopener">Bar-bistro menu</a></li><li><a href="https://www.cfrcalatori.ro/en/services-on-board/" target="_blank" rel="noopener">cfrcalatori.ro: Services on board</a></li></ul></div>
+ </div>
+</article>
+ </div>
+</section>
+<section class="region" id="r-west" data-region="west">
+ <h2 class="sec-head"><span class="sec-name">France, Italy &amp; Spain</span><span class="sec-count">7 services</span></h2>
+ 
+ <div class="cards">
+<article class="card" id="sncf" data-region="west">
+ <header class="plate">
+  <span class="uic" title="UIC country code">87</span>
+  <div class="plate-text"><span class="op">SNCF – TGV INOUI</span><span class="svc">Le Bistro (bar car)</span></div>
+ </header>
+ <div class="card-body">
+  <p class="where"><span class="country">France</span></p>
+  <p class="note">TGV INOUI’s bar car was renamed Le Bistro, staffed by what the menu calls baristas. SNCF publishes a new card each season.</p>
+  <ul class="items">
+<li class="item">
+  <div class="line"><span class="dish" lang="fr">Croque-monsieur</span><span class="dots" aria-hidden="true"></span><span class="price">8€40</span></div>
+  <p class="desc" lang="fr">Nouvelle recette aux ingrédients 100% français</p>
+  <p class="gloss">Toasted ham-and-cheese sandwich; new recipe with 100% French ingredients</p>
+  <p class="why">The hot ham-and-cheese sandwich of Paris cafés since the early 20th century, and the flagship hot item of the TGV bar.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="fr">Œuf mayonnaise, carottes râpées au citron</span><span class="dots" aria-hidden="true"></span><span class="price">5€90</span></div>
+  
+  <p class="gloss">Hard-boiled egg with mayonnaise, with grated carrots in lemon</p>
+  <p class="why">Two of the most basic French bistro starters, a fair match for the bar’s new name.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="fr">Madeleine pur beurre</span><span class="dots" aria-hidden="true"></span><span class="price">3€40</span></div>
+  
+  <p class="gloss">All-butter madeleine (small shell-shaped sponge cake)</p>
+  <p class="why">The shell-shaped cake Proust turned into a symbol of memory. The card files it under “Les gâteaux de voyage”.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="fr">Mini saucissons secs</span><span class="dots" aria-hidden="true"></span><span class="price">3€90</span></div>
+  <p class="desc" lang="fr">Montagne Noire</p>
+  <p class="gloss">Mini dry-cured sausages (Montagne Noire brand)</p>
+  <p class="why">Dry-cured saucisson is France’s everyday aperitif snack.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="fr">Ricard bouteille prête à boire (20 cl)</span><span class="dots" aria-hidden="true"></span><span class="price">4€90</span></div>
+  
+  <p class="gloss">Ricard pastis, ready-to-drink bottle (20 cl)</p>
+  <p class="why">Marseille’s pastis, and the only spirit on the Bistro card.</p>
+</li>
+  </ul>
+  <p class="caveat">Prices are printed with the euro sign as the decimal mark (8€40 = €8.40).</p>
+  <dl class="meta"><div><dt>Menu</dt><dd>Printed “Carte été 2026”, still the card linked on 27 Sept 2026.</dd></div><div><dt>Language</dt><dd>Français</dd></div><div><dt>Prices</dt><dd>EUR</dd></div></dl>
+  <div class="sources"><span class="src-label">Original menu</span><ul><li><a href="https://www.tgvinoui.sncf/medias-publics/2026-06/PDF_carte_bistro_été_26.pdf" target="_blank" rel="noopener">Summer 2026 card (PDF)</a></li><li><a href="https://www.tgvinoui.sncf/services/bord/le-bistro-tgv-inoui" target="_blank" rel="noopener">tgvinoui.sncf: Le Bistro</a></li></ul></div>
+ </div>
+</article><article class="card" id="lyria" data-region="west">
+ <header class="plate">
+  <span class="uic" title="UIC country code">87 · 85</span>
+  <div class="plate-text"><span class="op">TGV Lyria</span><span class="svc">Le Bistrot (bar car)</span></div>
+ </header>
+ <div class="card-body">
+  <p class="where"><span class="country">France / Switzerland</span><span class="route">Paris – Genève / Lausanne / Basel / Zürich</span></p>
+  <p class="note">The France–Switzerland high-speed operator. Its bar menu carries dishes by chef Michel Roth; first class has a separate at-seat menu, La Table.</p>
+  <ul class="items">
+<li class="item">
+  <div class="line"><span class="dish" lang="fr">Club jambon beurre et Gruyère Suisse</span><span class="dots" aria-hidden="true"></span><span class="price">7,50 € / CHF 7,50</span></div>
+  
+  <p class="gloss">Club sandwich with butter, ham and Swiss Gruyère</p>
+  <p class="why">The French jambon-beurre made cross-border with Gruyère, the cheese named after Gruyères in the canton of Fribourg.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="fr">Sauté de porc, jus au romarin, écrasé de pommes de terre à l’huile d’olive, fenouil confit et persillade</span><span class="dots" aria-hidden="true"></span><span class="price">16,20 € / CHF 16,20</span></div>
+  
+  <p class="gloss">Sautéed pork with rosemary jus, olive-oil crushed potatoes, candied fennel and persillade</p>
+  <p class="why">The bar car’s signature hot dish, credited on the menu to Michelin-starred chef Michel Roth.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="fr">Le renversé - Café au lait</span><span class="dots" aria-hidden="true"></span><span class="price">4,00 € / CHF 4,00</span></div>
+  
+  <p class="gloss">Milky coffee (&quot;renversé&quot;)</p>
+  <p class="why">“Renversé” is the Suisse romande word for a café au lait, a small Swiss touch on a French-language card.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="fr">Jus de pomme du Valais Schorle 50cl</span><span class="dots" aria-hidden="true"></span><span class="price">5,60 € / CHF 5,60</span></div>
+  
+  <p class="gloss">Sparkling apple juice from Valais (Schorle), 50cl</p>
+  <p class="why">A Schorle of sparkling water and apple juice from the canton of Valais.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="fr">Toblerone 35g</span><span class="dots" aria-hidden="true"></span><span class="price">3,00 € / CHF 3,00</span></div>
+  
+  <p class="gloss">Toblerone chocolate bar, 35g</p>
+  <p class="why">Toblerone is the Swiss chocolate bar created in Bern in 1908. It is one of the most recognisable Swiss products.</p>
+</li>
+  </ul>
+  
+  <dl class="meta"><div><dt>Menu</dt><dd>Printed “Printemps-Été 2026”.</dd></div><div><dt>Language</dt><dd>Français</dd></div><div><dt>Prices</dt><dd>EUR / CHF (same figure)</dd></div></dl>
+  <div class="sources"><span class="src-label">Original menu</span><ul><li><a href="https://www.tgv-lyria.com/sites/default/files/2026-04/MENU%20A5_PE%202026_VDEF_PLANCHES.pdf" target="_blank" rel="noopener">Bistrot menu (PDF)</a></li><li><a href="https://www.tgv-lyria.com/ch/fr/voyage-train/services-a-bord/restauration/le-bistrot" target="_blank" rel="noopener">tgv-lyria.com: Le Bistrot</a></li></ul></div>
+ </div>
+</article><article class="card" id="eurostar" data-region="west">
+ <header class="plate">
+  <span class="uic" title="UIC country code">70 · 87 · 88 · 84</span>
+  <div class="plate-text"><span class="op">Eurostar</span><span class="svc">Eurostar Café (bar car)</span></div>
+ </header>
+ <div class="card-body">
+  <p class="where"><span class="country">UK / France / Belgium / Netherlands</span><span class="route">London – Paris / Brussels / Amsterdam</span></p>
+  <p class="note">The bar car, now called Eurostar Café, prints its menu in four languages on the London routes. Premier passengers get an at-seat meal from a team led by Jeremy Chan of Ikoyi in London.</p>
+  <ul class="items">
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Ham and cheese baguette</span><span class="dots" aria-hidden="true"></span><span class="price">£6.30 | 7,90 €</span></div>
+  <p class="desc" lang="en">Baguette jambon-fromage | Baguette ham en kaas | Schinken-Käse-Baguette</p>
+  <p class="gloss">Ham and cheese baguette</p>
+  <p class="why">France’s default sandwich, and the obvious cross-Channel staple.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Pain aux raisins</span><span class="dots" aria-hidden="true"></span><span class="price">£3.10 | 3,80 €</span></div>
+  <p class="desc" lang="en">Rozijnenbroodje | Rosinenbrötchen</p>
+  <p class="gloss">Raisin-and-custard spiral pastry</p>
+  <p class="why">A French viennoiserie counter staple; the English menu keeps the French name.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Leffe Blonde - 33cl</span><span class="dots" aria-hidden="true"></span><span class="price">£5.70 | 7,10 €</span></div>
+  
+  <p class="gloss">Leffe Blonde Belgian abbey-style beer, 33cl</p>
+  <p class="why">A Belgian abbey-style beer, for the Brussels leg of the network.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">NOMAD x Eurostar Hazy IPA - 33cl</span><span class="dots" aria-hidden="true"></span><span class="price">£5.70 | 7,10 €</span></div>
+  
+  <p class="gloss">Hazy IPA, a collaboration beer between NOMAD and Eurostar</p>
+  <p class="why">An own-label collaboration beer. The Premier menu describes it as “Brewed exclusively for Eurostar”.</p>
+</li>
+  </ul>
+  <p class="caveat">The old name, Café Métropole, no longer appears on eurostar.com.</p>
+  <dl class="meta"><div><dt>Menu</dt><dd>No printed date (PDF created May 2026).</dd></div><div><dt>Language</dt><dd>English, Français, Nederlands, Deutsch</dd></div><div><dt>Prices</dt><dd>GBP / EUR</dd></div></dl>
+  <div class="sources"><span class="src-label">Original menu</span><ul><li><a href="https://cdn.sanity.io/files/1wyn2xo2/cms-production/4a08255c6bf96c3e74ffb0ad53f82448338699c6.pdf" target="_blank" rel="noopener">Café food menu, London routes (PDF)</a></li><li><a href="https://cdn.sanity.io/files/1wyn2xo2/cms-production/f3d01b8dc5f86b9408f544fe51de3ae06920ea6d.pdf" target="_blank" rel="noopener">Café drinks menu (PDF)</a></li><li><a href="https://www.eurostar.com/uk-en/travel-info/your-trip/food-on-board/our-menu" target="_blank" rel="noopener">eurostar.com: Our menu</a></li></ul></div>
+ </div>
+</article><article class="card" id="frecciarossa" data-region="west">
+ <header class="plate">
+  <span class="uic" title="UIC country code">83</span>
+  <div class="plate-text"><span class="op">Trenitalia – Frecciarossa</span><span class="svc">Executive class menu</span></div>
+ </header>
+ <div class="card-body">
+  <p class="where"><span class="country">Italy</span></p>
+  <p class="note">Executive class, ten leather seats in a single carriage, includes an at-seat menu signed by Carlo Cracco. Everyone else uses the FrecciaBistrò bar car.</p>
+  <ul class="items">
+<li class="item">
+  <div class="line"><span class="dish" lang="it">Mozzarella di Bufala Campana DOP</span><span class="dots" aria-hidden="true"></span><span class="price inc">incl.</span></div>
+  
+  <p class="gloss">Buffalo-milk mozzarella with protected designation of origin (DOP).</p>
+  <p class="why">Southern Italy’s signature cheese, made chiefly in Campania.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="it">Maritozzo al pomodoro con mousse al basilico</span><span class="dots" aria-hidden="true"></span><span class="price inc">incl.</span></div>
+  
+  <p class="gloss">Savoury tomato maritozzo bun with basil mousse</p>
+  <p class="why">The maritozzo is a Roman breakfast bun split and filled with whipped cream. Cracco makes it savoury.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="it">Fregola sarda con verdure dell’orto e ceci alla paprika</span><span class="dots" aria-hidden="true"></span><span class="price inc">incl.</span></div>
+  
+  <p class="gloss">Sardinian fregola pasta with garden vegetables and paprika chickpeas</p>
+  <p class="why">Toasted semolina pasta from Sardinia, less common on mainland menus.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="it">TAGLIERE by CARLO CRACCO</span><span class="dots" aria-hidden="true"></span><span class="price inc">incl.</span></div>
+  <p class="desc" lang="it">Speck e Bergader</p>
+  <p class="gloss">Charcuterie and cheese board: speck and Bergader blue cheese</p>
+  <p class="why">The tagliere, a board of cured meat and cheese, is the backbone of the Italian aperitivo. Speck is the smoked ham of South Tyrol.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="it">Regaleali, Nero d’Avola, Sicilia DOC - TASCA D’ALMERITA</span><span class="dots" aria-hidden="true"></span><span class="price inc">incl.</span></div>
+  <p class="desc" lang="it">Sicilia | Sicily | Sicile - 13% vol - 37,5 cl</p>
+  <p class="gloss">Sicilian red wine (Nero d&#x27;Avola) from Tasca d&#x27;Almerita&#x27;s Regaleali estate</p>
+  <p class="why">Nero d’Avola is Sicily’s signature red grape.</p>
+</li>
+  </ul>
+  <p class="caveat">Trenitalia’s priced bar list could not be downloaded, so this card shows the Executive menu, which has no prices.</p>
+  <dl class="meta"><div><dt>Menu</dt><dd>Printed “EDIZIONE SETTEMBRE 2026”.</dd></div><div><dt>Language</dt><dd>Italiano / English / Français</dd></div><div><dt>Prices</dt><dd>Included in the Executive fare</dd></div><div><dt>Chef</dt><dd>Carlo Cracco</dd></div></dl>
+  <div class="sources"><span class="src-label">Original menu</span><ul><li><a href="https://www.trenitalia.com/content/dam/trenitalia/allegati/in-viaggio-con-te/Menu_Executive_IT_Settembre_2026.pdf" target="_blank" rel="noopener">Executive menu, Sept 2026 (PDF)</a></li><li><a href="https://www.trenitalia.com/it/frecciarossa/servizi-frecciarossa/ristorazione-a-bordo-frecciarossa.html" target="_blank" rel="noopener">trenitalia.com: Ristorazione a bordo</a></li></ul></div>
+ </div>
+</article><article class="card" id="renfe" data-region="west">
+ <header class="plate">
+  <span class="uic" title="UIC country code">71</span>
+  <div class="plate-text"><span class="op">Renfe</span><span class="svc">AVE &amp; Larga Distancia “Menús Box”</span></div>
+ </header>
+ <div class="card-body">
+  <p class="where"><span class="country">Spain</span></p>
+  <p class="note">Renfe publishes pre-bookable boxes, served at the seat in Elige Confort or collected from the bar car. Its cafetería price list is not online.</p>
+  <ul class="items">
+<li class="item">
+  <div class="line"><span class="dish" lang="es">Box Caliente</span><span class="dots" aria-hidden="true"></span><span class="price">14,40 €</span></div>
+  <p class="desc" lang="es">Bocadillo de paleta ibérica de cebo. Aceite de Oliva Virgen Extra. Tarrina de tomate. Almendras sin sal. Bombón Noir 70%.</p>
+  <p class="gloss">&#x27;Hot box&#x27;: Iberian cured pork-shoulder sandwich with extra-virgin olive oil and a tomato pot, unsalted almonds, dark chocolate, plus a drink</p>
+  <p class="why">The Iberian-ham bocadillo with olive oil and tomato is Spain’s classic travel sandwich. Paleta ibérica de cebo is grain-fed Iberian pork shoulder.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="es">Box Ibérico</span><span class="dots" aria-hidden="true"></span><span class="price">15,55 €</span></div>
+  <p class="desc" lang="es">Entrante: ensalada mixta Plato principal: surtido ibérico, compuesto de paleta ibérica, cecina de vaca, queso Montelarreina semicurado y curado, fuet, higo y nueces. Picos de pan. Postre: fruta. Bombón Noir 70%.</p>
+  <p class="gloss">&#x27;Iberian box&#x27;: mixed salad; board of Iberian shoulder ham, cured beef (cecina), semi-cured and cured cheese, fuet, fig and walnuts; breadsticks; fruit</p>
+  <p class="why">A tabla of cured meats and cheese is Spain’s standard sharing board. Cecina is air-dried beef from León; fuet is a thin Catalan sausage.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="es">Box Salado</span><span class="dots" aria-hidden="true"></span><span class="price">14,40 €</span></div>
+  <p class="desc" lang="es">Queso curado, mini fuets y almendras fritas acompañado de picos gourmet. Bagel vegetal con atún. Yogur natural Pastoret.</p>
+  <p class="gloss">&#x27;Savoury box&#x27; (from 28 Oct): cured cheese, mini fuets and fried almonds with breadsticks; tuna bagel; natural yoghurt</p>
+  <p class="why">Cured cheese, fuet and fried almonds are the classic Spanish aperitivo spread.</p>
+</li>
+  </ul>
+  
+  <dl class="meta"><div><dt>Menu</dt><dd>Box Caliente and Box Ibérico “para viajes hasta el 27 de octubre”; Box Salado from 28 October.</dd></div><div><dt>Language</dt><dd>Español</dd></div><div><dt>Prices</dt><dd>EUR (a drink is included)</dd></div></dl>
+  <div class="sources"><span class="src-label">Original menu</span><ul><li><a href="https://www.renfe.com/es/es/viajar/el-viaje/a-bordo/comer-en-el-tren" target="_blank" rel="noopener">Comer en el tren (menús box)</a></li><li><a href="https://www.renfe.com/es/es/viajar/el-viaje/a-bordo/comer-en-el-tren/box-caliente" target="_blank" rel="noopener">Box Caliente</a></li><li><a href="https://www.renfe.com/es/es/viajar/el-viaje/a-bordo/comer-en-el-tren/box-iberico" target="_blank" rel="noopener">Box Ibérico</a></li><li><a href="https://www.renfe.com/es/es/viajar/el-viaje/a-bordo/comer-en-el-tren/box-salado" target="_blank" rel="noopener">Box Salado</a></li></ul></div>
+ </div>
+</article><article class="card" id="iryo" data-region="west">
+ <header class="plate">
+  <span class="uic" title="UIC country code">71</span>
+  <div class="plate-text"><span class="op">iryo</span><span class="svc">HAIZEA bar menu</span></div>
+ </header>
+ <div class="card-body">
+  <p class="where"><span class="country">Spain</span></p>
+  <p class="note">iryo, the Spanish high-speed operator part-owned by Trenitalia, calls its bar brand HAIZEA. The menu is credited to Gate Gourmet’s executive chef, Aitor Rodríguez Paz.</p>
+  <ul class="items">
+<li class="item">
+  <div class="line"><span class="dish" lang="es">Pintxo de tortilla de patata con cebolla acompañado con pan de 5 semillas</span><span class="dots" aria-hidden="true"></span><span class="price">3.00€ / 4.00€</span></div>
+  <p class="desc" lang="es">Media.60g / Entera. 120g</p>
+  <p class="gloss">Potato-and-onion Spanish omelette pintxo on five-seed bread (half or full portion)</p>
+  <p class="why">Tortilla de patata is Spain’s national comfort food, and “con cebolla” (with onion) is a long-running national argument.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="es">Ensaladilla rusa. 150g</span><span class="dots" aria-hidden="true"></span><span class="price">5.00€</span></div>
+  <p class="desc" lang="es">Patatas y hortalizas de la huerta. Acompañada con picos.</p>
+  <p class="gloss">&#x27;Russian salad&#x27;: potato and vegetable salad with mayonnaise, served with breadsticks</p>
+  <p class="why">Potato salad bound with mayonnaise, one of the commonest tapas in Spanish bars.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="es">Bocadillo de pan de aceite de paleta ibérica</span><span class="dots" aria-hidden="true"></span><span class="price">8.00€</span></div>
+  <p class="desc" lang="es">Paleta ibérica con pan de aceite de oliva virgen extra.</p>
+  <p class="gloss">Iberian cured pork-shoulder sandwich on extra-virgin olive oil bread</p>
+  <p class="why">This is iryo&#x27;s version of the Spanish jamón or paleta bocadillo, the default Spanish travel sandwich.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="es">Vermut Rosso Miró. 10cl</span><span class="dots" aria-hidden="true"></span><span class="price">4.00€</span></div>
+  <p class="desc" lang="es">De color rojo tierra con matices teja, posee un aroma intenso y fresco a orégano, menta y caramelo.</p>
+  <p class="gloss">Miró red vermouth, 10cl</p>
+  <p class="why">The pre-lunch vermut is a Spanish, and above all Catalan, social ritual.</p>
+</li>
+  </ul>
+  <p class="caveat">iryo’s site blocks downloads, so these lines were read from the official PDF through a web reader in two separate passes. Check the print before quoting.</p>
+  <dl class="meta"><div><dt>Menu</dt><dd>Printed “Menú válido desde el 30 de abril de 2026.”</dd></div><div><dt>Language</dt><dd>Español</dd></div><div><dt>Prices</dt><dd>EUR</dd></div><div><dt>Caterer</dt><dd>Gate Gourmet</dd></div></dl>
+  <div class="sources"><span class="src-label">Original menu</span><ul><li><a href="https://iryo.eu/sites/default/files/document/footer/haizea/haizea-carta-bordo.pdf" target="_blank" rel="noopener">HAIZEA menu (PDF)</a></li></ul></div>
+ </div>
+</article><article class="card" id="ouigo" data-region="west">
+ <header class="plate">
+  <span class="uic" title="UIC country code">71</span>
+  <div class="plate-text"><span class="op">OUIGO España</span><span class="svc">OUIBAR (bar car)</span></div>
+ </header>
+ <div class="card-body">
+  <p class="where"><span class="country">Spain</span></p>
+  <p class="note">SNCF’s low-cost Spanish subsidiary calls its bar car OUIBAR and runs on the Madrid–Barcelona corridor among others.</p>
+  <ul class="items">
+<li class="item">
+  <div class="line"><span class="dish" lang="es">Croissant mixto de jamón y queso</span><span class="dots" aria-hidden="true"></span><span class="price">5,20€</span></div>
+  
+  <p class="gloss">Ham-and-cheese croissant</p>
+  <p class="why">The &#x27;croissant mixto&#x27; (ham and cheese) is a standard item in Spanish cafeterías.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="es">Bocadillo de atún y aceitunas negras</span><span class="dots" aria-hidden="true"></span><span class="price">7,00€</span></div>
+  
+  <p class="gloss">Baguette-style sandwich with tuna and black olives</p>
+  <p class="why">The bocadillo on a crusty barra is the Spanish sandwich format. Tuna with olives is a common cafetería filling.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="es">Mini Fuet con picos</span><span class="dots" aria-hidden="true"></span><span class="price">4,00€</span></div>
+  
+  <p class="gloss">Mini fuet (thin Catalan dry sausage) with breadsticks</p>
+  <p class="why">Fuet is a thin, dry-cured Catalan pork sausage, a staple snack on the Madrid–Barcelona corridor OUIGO serves.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="es">Café cortado o con leche</span><span class="dots" aria-hidden="true"></span><span class="price">2,80€</span></div>
+  
+  <p class="gloss">Cortado (espresso with a dash of milk) or café con leche</p>
+  <p class="why">The two defining Spanish coffee orders.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="es">Tinto de verano</span><span class="dots" aria-hidden="true"></span><span class="price">4,00€</span></div>
+  
+  <p class="gloss">&#x27;Summer red&#x27;: red wine mixed with lemon soda</p>
+  <p class="why">The everyday Spanish summer drink: red wine topped up with lemon soda.</p>
+</li>
+  </ul>
+  <p class="caveat">Some prices cover a colour-coded group of items (the fuet and the tinto de verano share the 4,00€ band).</p>
+  <dl class="meta"><div><dt>Menu</dt><dd>No printed date.</dd></div><div><dt>Language</dt><dd>Español</dd></div><div><dt>Prices</dt><dd>EUR</dd></div></dl>
+  <div class="sources"><span class="src-label">Original menu</span><ul><li><a href="https://cloud.news.ouigo.com/ouibar" target="_blank" rel="noopener">OUIBAR menu</a></li><li><a href="https://www.ouigo.com/es/nuestro-ouibar-ouigo" target="_blank" rel="noopener">ouigo.com: Nuestro OUIBAR</a></li></ul></div>
+ </div>
+</article>
+ </div>
+</section>
+<section class="region" id="r-north" data-region="north">
+ <h2 class="sec-head"><span class="sec-name">The Nordics</span><span class="sec-count">5 services</span></h2>
+ 
+ <div class="cards">
+<article class="card" id="sj" data-region="north">
+ <header class="plate">
+  <span class="uic" title="UIC country code">74</span>
+  <div class="plate-text"><span class="op">SJ</span><span class="svc">SJ Bistro</span></div>
+ </header>
+ <div class="card-body">
+  <p class="where"><span class="country">Sweden</span></p>
+  <p class="note">Sweden’s state operator sells the same bistro range on its high-speed, InterCity and night trains. Hot dishes are listed only as “Varmrätter (utbud varierar)”.</p>
+  <ul class="items">
+<li class="item">
+  <div class="line"><span class="dish" lang="sv">Klassisk räksmörgås med ägg och dillmajonnäs</span><span class="dots" aria-hidden="true"></span><span class="price">141 kr</span></div>
+  
+  <p class="gloss">Classic prawn open sandwich with egg and dill mayonnaise</p>
+  <p class="why">The open prawn sandwich is a fixture of Swedish café lunches, and the most expensive single item on the bistro list.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="sv">Kanelbulle</span><span class="dots" aria-hidden="true"></span><span class="price">28 kr</span></div>
+  
+  <p class="gloss">Cinnamon bun</p>
+  <p class="why">The emblematic Swedish fika pastry, with its own day on 4 October.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="sv">Kaffe + fikabröd</span><span class="dots" aria-hidden="true"></span><span class="price">47 kr</span></div>
+  
+  <p class="gloss">Coffee plus a pastry (fika deal)</p>
+  <p class="why">Fika, the coffee break taken with something sweet, is a Swedish social ritual; SJ sells it as a fixed combination.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="sv">Äggmacka med kaviar</span><span class="dots" aria-hidden="true"></span><span class="price">55 kr</span></div>
+  
+  <p class="gloss">Egg sandwich with &#x27;kaviar&#x27; (smoked cod-roe spread)</p>
+  <p class="why">In Sweden &#x27;kaviar&#x27; usually means the sweet, smoked cod-roe spread sold in tubes, and boiled egg with kaviar is a standard Swedish breakfast and sandwich pairing.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="sv">Chokladboll</span><span class="dots" aria-hidden="true"></span><span class="price">24 kr</span></div>
+  
+  <p class="gloss">Chocolate ball (no-bake oat, cocoa and butter ball, usually rolled in coconut)</p>
+  <p class="why">A no-bake treat found in virtually every Swedish café and one of the first things Swedish children learn to make.</p>
+</li>
+  </ul>
+  
+  <dl class="meta"><div><dt>Menu</dt><dd>Undated web menu (updated 25 Sept 2026).</dd></div><div><dt>Language</dt><dd>Svenska</dd></div><div><dt>Prices</dt><dd>SEK</dd></div></dl>
+  <div class="sources"><span class="src-label">Original menu</span><ul><li><a href="https://www.sj.se/allt-om-resan/mat-pa-taget/bistromeny" target="_blank" rel="noopener">Bistromeny</a></li><li><a href="https://www.sj.se/allt-om-resan/mat-pa-taget" target="_blank" rel="noopener">sj.se: Mat på tåget</a></li></ul></div>
+ </div>
+</article><article class="card" id="sj-malmbanan" data-region="north">
+ <header class="plate">
+  <span class="uic" title="UIC country code">74</span>
+  <div class="plate-text"><span class="op">SJ</span><span class="svc">SJ Bistro, Malmbanan</span></div>
+ </header>
+ <div class="card-body">
+  <p class="where"><span class="country">Sweden</span><span class="route">Luleå – Narvik</span></p>
+  <p class="note">On the Iron Ore Line through Swedish Lapland to the Norwegian port of Narvik, the bistro sells a smaller, northern range.</p>
+  <ul class="items">
+<li class="item">
+  <div class="line"><span class="dish" lang="sv">Renklämma</span><span class="dots" aria-hidden="true"></span><span class="price">33 kr</span></div>
+  
+  <p class="gloss">Reindeer &#x27;klämma&#x27; (soft flatbread/sandwich with reindeer meat)</p>
+  <p class="why">Reindeer meat is central to northern Scandinavian and Sámi food culture, and this line crosses Lapland.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="sv">Gräddstuvad viltskav med potatismos</span><span class="dots" aria-hidden="true"></span><span class="price">113 kr</span></div>
+  
+  <p class="gloss">Shaved game meat stewed in cream, with mashed potato</p>
+  <p class="why">&#x27;Skav&#x27; (thinly shaved meat, most famously reindeer) cooked in cream and served with mash is a northern Swedish classic.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="sv">Rökt renkorv</span><span class="dots" aria-hidden="true"></span><span class="price">43 kr</span></div>
+  
+  <p class="gloss">Smoked reindeer sausage</p>
+  <p class="why">Smoked reindeer sausage appears only on this line’s menu.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="sv">Mazarin</span><span class="dots" aria-hidden="true"></span><span class="price">24 kr</span></div>
+  
+  <p class="gloss">Mazarin (almond-filled shortcrust tartlet with icing)</p>
+  <p class="why">The mazarin is a long-established Swedish bakery staple and part of the fika repertoire.</p>
+</li>
+  </ul>
+  
+  <dl class="meta"><div><dt>Menu</dt><dd>Undated web menu.</dd></div><div><dt>Language</dt><dd>Svenska</dd></div><div><dt>Prices</dt><dd>SEK</dd></div></dl>
+  <div class="sources"><span class="src-label">Original menu</span><ul><li><a href="https://www.sj.se/allt-om-resan/mat-pa-taget/bistromeny-malmbanan" target="_blank" rel="noopener">Bistromeny Malmbanan</a></li></ul></div>
+ </div>
+</article><article class="card" id="vr" data-region="north">
+ <header class="plate">
+  <span class="uic" title="UIC country code">10</span>
+  <div class="plate-text"><span class="op">VR</span><span class="svc">Ravintolavaunu (restaurant car)</span></div>
+ </header>
+ <div class="card-body">
+  <p class="where"><span class="country">Finland</span></p>
+  <p class="note">Finnish restaurant cars serve for the whole journey, and night-train passengers can order some dishes to their cabin.</p>
+  <ul class="items">
+<li class="item">
+  <div class="line"><span class="dish" lang="fi">Lohikeitto, leipä &amp; levite</span><span class="dots" aria-hidden="true"></span><span class="price">13,90 €</span></div>
+  <p class="desc" lang="fi">Herkullinen lohikeitto vie kielen mennessään.</p>
+  <p class="gloss">Salmon soup, bread and spread</p>
+  <p class="why">Creamy salmon soup (lohikeitto) is one of Finland&#x27;s best-known everyday dishes.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="fi">Lihapullat &amp; perunamuusi</span><span class="dots" aria-hidden="true"></span><span class="price">13,90 €</span></div>
+  <p class="desc" lang="fi">Kestosuosikki, jota myydään vuodessa yli 80 000 annosta.</p>
+  <p class="gloss">Meatballs and mashed potato</p>
+  <p class="why">VR’s own description: a perennial favourite, more than 80,000 portions sold a year.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="fi">Jättilihapiirakka</span><span class="dots" aria-hidden="true"></span><span class="price">5,90 €</span></div>
+  
+  <p class="gloss">Giant meat pie</p>
+  <p class="why">Listed under “Nostalgian nälkään”. The fried meat-and-rice pasty is classic Finnish kiosk food.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="fi">Korvapuusti</span><span class="dots" aria-hidden="true"></span><span class="price">3,60 €</span></div>
+  
+  <p class="gloss">Finnish cinnamon-cardamom bun (literally “slapped ear”).</p>
+  <p class="why">The standard Finnish coffee bun.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="fi">Tattirisotto parmesanlastuilla &amp; salaattia - alk.</span><span class="dots" aria-hidden="true"></span><span class="price">11,90 €</span></div>
+  <p class="desc" lang="fi">Syksyn pimenevien iltojen sesonkiannoksena palvelee täyteläinen tattirisotto, parmesanjuustolastujen ja vihersalaatin kera.</p>
+  <p class="gloss">Porcini (bolete) risotto with parmesan shavings and salad – from</p>
+  <p class="why">The autumn seasonal dish. Picking wild mushrooms is a national autumn pastime in Finland.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="fi">Long Drink 5,5% 0,33 L</span><span class="dots" aria-hidden="true"></span><span class="price">7,90 €</span></div>
+  
+  <p class="gloss">Finnish long drink (gin-and-grapefruit, &#x27;lonkero&#x27;)</p>
+  <p class="why">The gin-and-grapefruit “lonkero” was created for the 1952 Helsinki Olympics and is still a national favourite.</p>
+</li>
+  </ul>
+  <p class="caveat">Standard prices shown; ordering through VR’s app is slightly cheaper.</p>
+  <dl class="meta"><div><dt>Menu</dt><dd>Undated web menu; autumn dishes “saatavilla 7.1.2027 asti”.</dd></div><div><dt>Language</dt><dd>Suomi</dd></div><div><dt>Prices</dt><dd>EUR</dd></div></dl>
+  <div class="sources"><span class="src-label">Original menu</span><ul><li><a href="https://www.vr.fi/palvelut-junassa/ravintolavaunu" target="_blank" rel="noopener">Ravintolavaunu</a></li><li><a href="https://www.vr.fi/en/facilities-and-services/restaurant-car" target="_blank" rel="noopener">English version</a></li></ul></div>
+ </div>
+</article><article class="card" id="vy" data-region="north">
+ <header class="plate">
+  <span class="uic" title="UIC country code">76</span>
+  <div class="plate-text"><span class="op">Vy</span><span class="svc">Vy kafé, Bergensbanen</span></div>
+ </header>
+ <div class="card-body">
+  <p class="where"><span class="country">Norway</span><span class="route">Oslo – Bergen</span></p>
+  <p class="note">The café on the Bergen Line, which crosses the Hardangervidda plateau. On the night train it stays open until shortly before arrival.</p>
+  <ul class="items">
+<li class="item">
+  <div class="line"><span class="dish" lang="nb">Vaffel med valgfritt tilbehør</span><span class="dots" aria-hidden="true"></span><span class="price">59 kr / 54 kr</span></div>
+  <p class="desc" lang="nb">Vaffel med valgfritt tilbehør; smør, brunost, rømme, jordbærsyltetøy</p>
+  <p class="gloss">Waffle with your choice of topping: butter, brown cheese, sour cream, strawberry jam</p>
+  <p class="why">Waffles with brunost (caramelised whey cheese) or sour cream and jam are a Norwegian coffee-table institution.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="nb">Kjøttkaker</span><span class="dots" aria-hidden="true"></span><span class="price">229 kr / 209 kr</span></div>
+  <p class="desc" lang="nb">Deilige kjøttkaker i en smakfull brun saus med poteter og ertestuing. Du kan også få kjøttkaker med potetstappe istedenfor ertestuing og poteter.</p>
+  <p class="gloss">Norwegian meat patties in brown gravy with potatoes and mushy peas</p>
+  <p class="why">Kjøttkaker in brown sauce with ertestuing (stewed peas) is one of Norway&#x27;s defining home-cooked dinners.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="nb">Grillpølse med brød eller lompe</span><span class="dots" aria-hidden="true"></span><span class="price">69 kr / 64 kr</span></div>
+  
+  <p class="gloss">Grilled sausage in a bun or a lompe (soft potato flatbread)</p>
+  <p class="why">A hot dog wrapped in lompe, the soft potato flatbread, is Norway’s archetypal kiosk snack.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="nb">Vestlandslefse</span><span class="dots" aria-hidden="true"></span><span class="price">39 kr</span></div>
+  
+  <p class="gloss">Western Norway lefse (soft flatbread with a sweet buttery filling)</p>
+  <p class="why">Lefse is a traditional Norwegian soft flatbread; the Vestland style is a sweet teatime version from the region the line ends in.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="nb">Kvikk Lunsj</span><span class="dots" aria-hidden="true"></span><span class="price">45 kr</span></div>
+  
+  <p class="gloss">Freia chocolate-covered wafer bar</p>
+  <p class="why">Freia’s chocolate wafer is the traditional snack of Norwegian mountain hikes, apt for a line over the Hardangervidda.</p>
+</li>
+  </ul>
+  <p class="caveat">Most food has two prices (“59 kr / 54 kr”); the menu doesn’t say what the lower one is.</p>
+  <dl class="meta"><div><dt>Menu</dt><dd>Undated web menu.</dd></div><div><dt>Language</dt><dd>Norsk bokmål</dd></div><div><dt>Prices</dt><dd>NOK</dd></div><div><dt>Caterer</dt><dd>Togservice (SSP Norge)</dd></div></dl>
+  <div class="sources"><span class="src-label">Original menu</span><ul><li><a href="https://vy.meny.togservice.no/" target="_blank" rel="noopener">Café menu</a></li><li><a href="https://www.vy.no/en/travelling-with-vy/on-board-the-train/cafe" target="_blank" rel="noopener">vy.no: Café</a></li></ul></div>
+ </div>
+</article><article class="card" id="sj-norge" data-region="north">
+ <header class="plate">
+  <span class="uic" title="UIC country code">76</span>
+  <div class="plate-text"><span class="op">SJ Norge</span><span class="svc">Kafé, Dovrebanen &amp; Nordlandsbanen</span></div>
+ </header>
+ <div class="card-body">
+  <p class="where"><span class="country">Norway</span><span class="route">Oslo – Trondheim – Bodø</span></p>
+  <p class="note">SJ Norge runs the long lines north from Oslo. The menu says it focuses “på norske smaker og lokale råvarer i sesong”.</p>
+  <ul class="items">
+<li class="item">
+  <div class="line"><span class="dish" lang="nb">Pizza Tolga Ost &amp; Skinke</span><span class="dots" aria-hidden="true"></span><span class="price">174 kr / 159 kr</span></div>
+  <p class="desc" lang="nb">Pizza fra Tolga med kjøtt fra Røros slakteri og ost fra Alvdal</p>
+  <p class="gloss">Ham and cheese pizza from Tolga</p>
+  <p class="why">The menu names small-town suppliers from Østerdalen and Røros, on SJ Norge’s Røros Line: Tolga, Røros and Alvdal.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="nb">Rørosis</span><span class="dots" aria-hidden="true"></span><span class="price">75 kr / 68 kr</span></div>
+  
+  <p class="gloss">Ice cream from Røros</p>
+  <p class="why">Ice cream from Røros, the UNESCO-listed copper-mining town whose dairy products are sold across Norway.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="nb">E.C. Dahls Pils 0,5L</span><span class="dots" aria-hidden="true"></span><span class="price">144 kr</span></div>
+  
+  <p class="gloss">E.C. Dahls pilsner, 0.5 litre</p>
+  <p class="why">Trondheim’s historic brewery, founded in 1856.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="nb">Nordlandspils 0,5L</span><span class="dots" aria-hidden="true"></span><span class="price">144 kr</span></div>
+  
+  <p class="gloss">Nordland pilsner, 0.5 litre</p>
+  <p class="why">A regional pilsner named after Nordland, the county the Nordland Line runs through on its way to Bodø.</p>
+</li>
+  </ul>
+  <p class="caveat">On the Nordland Line the café runs only on the 07:49 from Trondheim and the 12:27 from Bodø. Two prices appear, as with Vy.</p>
+  <dl class="meta"><div><dt>Menu</dt><dd>Undated web menu.</dd></div><div><dt>Language</dt><dd>Norsk bokmål</dd></div><div><dt>Prices</dt><dd>NOK</dd></div><div><dt>Caterer</dt><dd>Togservice (SSP Norge)</dd></div></dl>
+  <div class="sources"><span class="src-label">Original menu</span><ul><li><a href="https://sj.meny.togservice.no/" target="_blank" rel="noopener">Café menu</a></li><li><a href="https://www.sj.no/en/plan-your-journey/food/" target="_blank" rel="noopener">sj.no: Food</a></li></ul></div>
+ </div>
+</article>
+ </div>
+</section>
+<section class="region" id="r-isles" data-region="isles">
+ <h2 class="sec-head"><span class="sec-name">Britain &amp; Ireland</span><span class="sec-count">6 services</span></h2>
+ 
+ <div class="cards">
+<article class="card" id="caledonian" data-region="isles">
+ <header class="plate">
+  <span class="uic" title="UIC country code">70</span>
+  <div class="plate-text"><span class="op">Caledonian Sleeper</span><span class="svc">Club Car</span></div>
+ </header>
+ <div class="card-body">
+  <p class="where"><span class="country">United Kingdom (Scotland)</span><span class="route">London Euston – Scotland</span></p>
+  <p class="note">The overnight train from London to Scotland. Breakfast is included for guests in Club rooms and Caledonian Doubles.</p>
+  <ul class="items">
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Macsween’s haggis, neeps and tatties with a whisky sauce</span><span class="dots" aria-hidden="true"></span><span class="price">£17</span></div>
+  
+  <p class="gloss">Haggis with mashed swede (neeps) and potatoes (tatties), in a whisky sauce.</p>
+  <p class="why">Scotland’s national dish, eaten above all on Burns Night. Macsween is an Edinburgh haggis maker.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Scottish cooked breakfast</span><span class="dots" aria-hidden="true"></span><span class="price">£16</span></div>
+  <p class="desc" lang="en">Puddledub bacon, poached egg, The Farmer’s Son lorne sausage, Macsween’s haggis, tattie scone, baked beans</p>
+  <p class="gloss">Full Scottish breakfast</p>
+  <p class="why">Lorne (square sliced) sausage, the tattie scone and haggis are what separate a Scottish breakfast from an English one.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Arran 10 Year Old 46% ABV</span><span class="dots" aria-hidden="true"></span><span class="price">£13</span></div>
+  
+  <p class="gloss">Arran 10-year-old single malt whisky (50ml)</p>
+  <p class="why">One of six single malts listed under “The Essence of Scotland”, all £13 a dram.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Scottish cheese plate with Sarah Gray’s apple and pear chutney, and grapes</span><span class="dots" aria-hidden="true"></span><span class="price">£15</span></div>
+  
+  <p class="gloss">Scottish cheese plate with apple and pear chutney and grapes</p>
+  <p class="why">A plate of Scottish cheeses, served as a dessert course on the Club Car menu.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Tunnock’s caramel wafer</span><span class="dots" aria-hidden="true"></span><span class="price">£1</span></div>
+  
+  <p class="gloss">Tunnock&#x27;s caramel wafer</p>
+  <p class="why">Made by Tunnock&#x27;s of Uddingston, near Glasgow, the caramel wafer is one of Scotland&#x27;s best-known biscuits.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Irn-Bru 330ml</span><span class="dots" aria-hidden="true"></span><span class="price">£2.5</span></div>
+  
+  <p class="gloss">Irn-Bru (Scottish soft drink), 330ml can</p>
+  <p class="why">A.G. Barr’s orange soft drink, sold for decades as “Scotland’s other national drink”.</p>
+</li>
+  </ul>
+  <p class="caveat">Prices printed without trailing zeros (“£2.5”).</p>
+  <dl class="meta"><div><dt>Menu</dt><dd>Undated web menus.</dd></div><div><dt>Language</dt><dd>English</dd></div><div><dt>Prices</dt><dd>GBP</dd></div></dl>
+  <div class="sources"><span class="src-label">Original menu</span><ul><li><a href="https://www.sleeper.scot/sleeper-experience/food-and-drink/club-car-menu/" target="_blank" rel="noopener">Club Car menu</a></li><li><a href="https://www.sleeper.scot/sleeper-experience/food-and-drink/club-car-drinks-menu/" target="_blank" rel="noopener">Drinks menu</a></li><li><a href="https://www.sleeper.scot/sleeper-experience/food-and-drink/breakfast-menu/" target="_blank" rel="noopener">Breakfast menu</a></li></ul></div>
+ </div>
+</article><article class="card" id="lner" data-region="isles">
+ <header class="plate">
+  <span class="uic" title="UIC country code">70</span>
+  <div class="plate-text"><span class="op">LNER</span><span class="svc">First Class at-seat menu</span></div>
+ </header>
+ <div class="card-body">
+  <p class="where"><span class="country">United Kingdom</span><span class="route">London King’s Cross – Yorkshire – Edinburgh</span></p>
+  <p class="note">First Class food on the East Coast Main Line is complimentary and served at the seat. The menu names suppliers along the route.</p>
+  <ul class="items">
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Full LNER</span><span class="dots" aria-hidden="true"></span><span class="price inc">incl.</span></div>
+  <p class="desc" lang="en">Lincolnshire sausage, smoked bacon and black pudding (all from Yorkshire-based Taste Tradition), rosti potato, baked beans, mushroom and a free-range fried egg.</p>
+  <p class="gloss">The full LNER cooked breakfast</p>
+  <p class="why">The cooked breakfast with black pudding, the classic of British railway dining, here sourced in Yorkshire.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Breakfast roll: Bacon</span><span class="dots" aria-hidden="true"></span><span class="price inc">incl.</span></div>
+  <p class="desc" lang="en">Yorkshire-based Taste Tradition smoked bacon.</p>
+  <p class="gloss">Bacon roll</p>
+  <p class="why">The bacon roll is the default British travel breakfast.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Buttery toasted crumpets</span><span class="dots" aria-hidden="true"></span><span class="price inc">incl.</span></div>
+  <p class="desc" lang="en">Hot buttery crumpets, served with a jar of sweet strawberry jam.</p>
+  <p class="gloss">Toasted crumpets with butter and jam</p>
+  <p class="why">Crumpets are a British teatime staple; LNER lists them as &#x27;Available all day&#x27;.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Tea</span><span class="dots" aria-hidden="true"></span><span class="price inc">incl.</span></div>
+  <p class="desc" lang="en">An ethically sourced breakfast tea, blended on our route by Brodies in Edinburgh</p>
+  <p class="gloss">Breakfast tea</p>
+  <p class="why">Blended in Edinburgh, the line’s northern terminus.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Hop on Board Ale</span><span class="dots" aria-hidden="true"></span><span class="price inc">incl.</span></div>
+  <p class="desc" lang="en">Made on our route exclusively for LNER by Rudgate Brewery in York</p>
+  <p class="gloss">Ale brewed for LNER in York</p>
+  <p class="why">A route beer brewed in York, the railway city midway along the line.</p>
+</li>
+  </ul>
+  
+  <dl class="meta"><div><dt>Menu</dt><dd>Printed “LNER3429 | Sept 2026”.</dd></div><div><dt>Language</dt><dd>English</dd></div><div><dt>Prices</dt><dd>Complimentary with First Class</dd></div></dl>
+  <div class="sources"><span class="src-label">Original menu</span><ul><li><a href="https://www.lner.co.uk/first-class-travel/menu/first-class-configurable-menu-1/" target="_blank" rel="noopener">Signature menu</a></li><li><a href="https://www.lner.co.uk/first-class-travel/menu/" target="_blank" rel="noopener">lner.co.uk: First Class menu</a></li></ul></div>
+ </div>
+</article><article class="card" id="gwr" data-region="isles">
+ <header class="plate">
+  <span class="uic" title="UIC country code">70</span>
+  <div class="plate-text"><span class="op">GWR</span><span class="svc">Pullman Dining (restaurant car)</span></div>
+ </header>
+ <div class="card-body">
+  <p class="where"><span class="country">United Kingdom</span><span class="route">London Paddington – Plymouth / Swansea</span></p>
+  <p class="note">A silver-service restaurant car with chefs cooking on board, on selected weekday trains to the West Country and South Wales.</p>
+  <ul class="items">
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Smoked Haddock Croquette with Pickled Fennel and Welsh Rarebit Sauce</span><span class="dots" aria-hidden="true"></span><span class="price">Set menu</span></div>
+  <p class="desc" lang="en">Smoked haddock croquette with a Welsh rarebit sauce, pickled fennel, and avruga caviar.</p>
+  <p class="gloss">Starter: smoked haddock croquette, Welsh rarebit sauce, pickled fennel, avruga</p>
+  <p class="why">Welsh rarebit sauce nods to the Swansea route.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">6oz Fillet Steak</span><span class="dots" aria-hidden="true"></span><span class="price">(+£15 supplement)</span></div>
+  <p class="desc" lang="en">Served with triple-cooked chips, garlic &amp; parsley oyster mushrooms, smoked tomato chutney, and a pink peppercorn butter. Accompanied by a Bourgogne sauce.</p>
+  <p class="gloss">6oz fillet steak</p>
+  <p class="why">GWR calls it “our famous fillet steak”; it is the Pullman’s signature main.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">The Pullman Cheeseboard</span><span class="dots" aria-hidden="true"></span><span class="price">Set menu</span></div>
+  <p class="desc" lang="en">All served with plum &amp; ginger chutney.</p>
+  <p class="gloss">Cheeseboard of Bath Blue, Snowdonia Red Storm and Somerset Camembert.</p>
+  <p class="why">Bath Blue is made at Kelston near Bath and the Camembert-style cheese in Somerset, both on GWR’s routes; Red Storm comes from the Snowdonia Cheese Company in North Wales.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Sticky Toffee Pudding</span><span class="dots" aria-hidden="true"></span><span class="price">Set menu</span></div>
+  <p class="desc" lang="en">With a miso sauce, Biscoff® crumb, and a whipped vanilla cream.</p>
+  <p class="gloss">Sticky toffee pudding</p>
+  <p class="why">A British pudding classic, here with a miso sauce.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Salcombe Gin</span><span class="dots" aria-hidden="true"></span><span class="price">£9</span></div>
+  <p class="desc" lang="en">Every bottle of gin is carefully distilled at the water’s edge in Salcombe, South Devon.</p>
+  <p class="gloss">Salcombe gin (Devon)</p>
+  <p class="why">A South Devon gin on trains bound for Plymouth.</p>
+</li>
+  </ul>
+  
+  <dl class="meta"><div><dt>Menu</dt><dd>Autumn 2026 menu (printed code “AUAUG26”).</dd></div><div><dt>Language</dt><dd>English</dd></div><div><dt>Prices</dt><dd>GBP · set menu: 2 courses £40, 3 courses £49</dd></div></dl>
+  <div class="sources"><span class="src-label">Original menu</span><ul><li><a href="https://www.gwr.com/-/media/gwr-sc-website/files/menus/gwr-pullman-autumn-menu-2026.pdf" target="_blank" rel="noopener">Autumn 2026 menu (PDF)</a></li><li><a href="https://www.gwr.com/travelling-with-us/pullman-dining" target="_blank" rel="noopener">gwr.com: Pullman Dining</a></li></ul></div>
+ </div>
+</article><article class="card" id="avanti" data-region="isles">
+ <header class="plate">
+  <span class="uic" title="UIC country code">70</span>
+  <div class="plate-text"><span class="op">Avanti West Coast</span><span class="svc">First Class at-seat menu</span></div>
+ </header>
+ <div class="card-body">
+  <p class="where"><span class="country">United Kingdom</span><span class="route">London Euston – Manchester / Glasgow</span></p>
+  <p class="note">First Class on the West Coast Main Line. The menu says it uses “ingredients sourced from some of the West Coast’s most passionate producers”.</p>
+  <ul class="items">
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Toasted Teacake</span><span class="dots" aria-hidden="true"></span><span class="price inc">incl.</span></div>
+  <p class="desc" lang="en">Traditional British lightly spiced teacake with raisins, served warm with cultured butter and jam. Our teacake is vegan, ask us for vegan spread.</p>
+  <p class="gloss">Toasted teacake</p>
+  <p class="why">A spiced, fruited bun eaten toasted and buttered: a fixture of the British tea table.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Classic Bacon Roll</span><span class="dots" aria-hidden="true"></span><span class="price inc">incl.</span></div>
+  <p class="desc" lang="en">Thick cut smoked British bacon served in a torpedo roll dusted with linseeds.</p>
+  <p class="gloss">Bacon roll</p>
+  <p class="why">The bacon roll is the quintessential British travel breakfast.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Lemon and Orange Sprinkle Shortbread</span><span class="dots" aria-hidden="true"></span><span class="price inc">incl.</span></div>
+  <p class="desc" lang="en">Handmade, hand-wrapped, melt in the mouth shortbread. Made in North Wales, in hailing distance of the West Coast Main Line.</p>
+  <p class="gloss">Lemon and orange shortbread</p>
+  <p class="why">Made by The Pudding Compartment in Flint, North Wales, near the line to Holyhead.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Forest to First Gin (Avanti Exclusive)</span><span class="dots" aria-hidden="true"></span><span class="price inc">incl.</span></div>
+  <p class="desc" lang="en">Distilled with water from an ancient spring and flavoured with berries and botanicals foraged from Macclesfield Forest.</p>
+  <p class="gloss">Gin made exclusively for Avanti with Macclesfield Forest botanicals</p>
+  <p class="why">The menu&#x27;s introduction highlights this gin as an example of its &#x27;real sense of place&#x27;.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Titanic Brewery First Class IPA 4.5% ABV</span><span class="dots" aria-hidden="true"></span><span class="price inc">incl.</span></div>
+  <p class="desc" lang="en">(Avanti Exclusive) A golden hoppy ale with a distinctive crisp taste and fruity aroma. Brewed exclusively for Avanti West Coast.</p>
+  <p class="gloss">IPA brewed exclusively for Avanti by Titanic Brewery (Stoke-on-Trent)</p>
+  <p class="why">Brewed in Stoke-on-Trent, a stop on Avanti’s Manchester route.</p>
+</li>
+  </ul>
+  
+  <dl class="meta"><div><dt>Menu</dt><dd>Printed “Summer 2026”, still the menu linked on 27 Sept 2026.</dd></div><div><dt>Language</dt><dd>English</dd></div><div><dt>Prices</dt><dd>Complimentary with First Class</dd></div></dl>
+  <div class="sources"><span class="src-label">Original menu</span><ul><li><a href="https://www.avantiwestcoast.co.uk/-/media/avanti-pdfs/avanti-menus/summer-2026/weekdays/pendolino/summer-fc-menu-pendolino-digital-fa.pdf" target="_blank" rel="noopener">First Class menu (PDF)</a></li><li><a href="https://www.avantiwestcoast.co.uk/classes-of-travel/first-class/first-class-service" target="_blank" rel="noopener">avantiwestcoast.co.uk: First Class</a></li></ul></div>
+ </div>
+</article><article class="card" id="tfw" data-region="isles">
+ <header class="plate">
+  <span class="uic" title="UIC country code">70</span>
+  <div class="plate-text"><span class="op">Transport for Wales</span><span class="svc">First Class dining, Premier Service</span></div>
+ </header>
+ <div class="card-body">
+  <p class="where"><span class="country">United Kingdom (Wales)</span><span class="route">Cardiff – Holyhead / Manchester</span></p>
+  <p class="note">The menu opens: “We’re Welsh by name, Welsh by nature and proud to be serving Welsh produce.” Food is paid for; hot drinks and biscuits are free.</p>
+  <ul class="items">
+<li class="item">
+  <div class="line"><span class="dish" lang="en">The Full Welsh breakfast</span><span class="dots" aria-hidden="true"></span><span class="price">£12.95</span></div>
+  <p class="desc" lang="en">Egg, bacon, black pudding, beans, mushrooms, hash browns, grilled tomato and toasted bloomer bread. Also comes with your choice of a Welsh pork or Glamorgan sausage. Let your host know how you’d like your egg cooked.</p>
+  <p class="gloss">Full Welsh breakfast, with a choice of Welsh pork sausage or Glamorgan (cheese and leek) sausage</p>
+  <p class="why">The Glamorgan sausage, a meatless sausage of cheese, leek and breadcrumbs, is a traditional Welsh dish.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Welsh onion tart</span><span class="dots" aria-hidden="true"></span><span class="price">£16.95</span></div>
+  <p class="desc" lang="en">Filled with Snowdonia caramelised onions and braised leeks. Topped with Blaenavon smoked cheddar and served warm with buttered savoy cabbage and a mustard sauce.</p>
+  <p class="gloss">Welsh onion and leek tart with smoked Blaenavon cheddar</p>
+  <p class="why">The leek is a national emblem of Wales; the smoked cheddar comes from Blaenavon in the south-east.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Slow roasted feather blade of beef</span><span class="dots" aria-hidden="true"></span><span class="price">£23.45</span></div>
+  <p class="desc" lang="en">Served with Snowdonia Cheese Co Black Bomber dauphinoise, buttery kale and a rich bourguignon jus.</p>
+  <p class="gloss">Slow-roast feather blade of beef with Black Bomber cheddar dauphinoise</p>
+  <p class="why">Black Bomber, a black-waxed extra mature cheddar, is the Snowdonia Cheese Company&#x27;s best-known product.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Caramel apple bread and butter pudding</span><span class="dots" aria-hidden="true"></span><span class="price">£7.95</span></div>
+  <p class="desc" lang="en">Layers of custardy brioche loaf with chunks of apple and a crunchy crumble crust served with Crwst Pembrokeshire Sea Salted Caramel sauce.</p>
+  <p class="gloss">Apple bread-and-butter pudding with Pembrokeshire sea-salted caramel</p>
+  <p class="why">A British pudding classic finished with a caramel sauce from a west Wales producer.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Welsh Brew tea</span><span class="dots" aria-hidden="true"></span><span class="price">Complimentary</span></div>
+  
+  <p class="gloss">Welsh Brew tea</p>
+  <p class="why">Tea blended in Wales, free with First Class dining.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Aberffraw Biscuit Co shortbread</span><span class="dots" aria-hidden="true"></span><span class="price">Complimentary</span></div>
+  
+  <p class="gloss">Aberffraw shortbread, a scallop-shaped biscuit.</p>
+  <p class="why">Named after Aberffraw on Anglesey, the island the Holyhead line ends on.</p>
+</li>
+  </ul>
+  
+  <dl class="meta"><div><dt>Menu</dt><dd>“Prices are correct as of 1 September 2026”.</dd></div><div><dt>Language</dt><dd>English</dd></div><div><dt>Prices</dt><dd>GBP (hot drinks and shortbread complimentary)</dd></div></dl>
+  <div class="sources"><span class="src-label">Original menu</span><ul><li><a href="https://tfw.wales/sites/default/files/2026-09/FIRST-CLASS-LUNCH-AND-DINNER-MENU-SEP-2026_ENG.pdf" target="_blank" rel="noopener">Lunch &amp; dinner menu (PDF)</a></li><li><a href="https://tfw.wales/sites/default/files/2026-09/FIRST-CLASS-BREAKFAST-MENU_ENG.pdf" target="_blank" rel="noopener">Breakfast menu (PDF)</a></li><li><a href="https://tfw.wales/ways-to-travel/rail/food-and-drink/first-class-dining/first-class" target="_blank" rel="noopener">tfw.wales: First Class dining</a></li></ul></div>
+ </div>
+</article><article class="card" id="enterprise" data-region="isles">
+ <header class="plate">
+  <span class="uic" title="UIC country code">60 · 70</span>
+  <div class="plate-text"><span class="op">Iarnród Éireann &amp; NI Railways</span><span class="svc">Enterprise First Plus</span></div>
+ </header>
+ <div class="card-body">
+  <p class="where"><span class="country">Ireland / Northern Ireland</span><span class="route">Dublin – Belfast</span></p>
+  <p class="note">The cross-border train between the two Irish capitals, catered by CCSL for both railways and priced in sterling and euro.</p>
+  <ul class="items">
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Enterprise Full Breakfast</span><span class="dots" aria-hidden="true"></span><span class="price">£11.00/ €13.20</span></div>
+  <p class="desc" lang="en">Enjoy oven baked Sausage, crispy Bacon, fried Egg, Potato Bread, Turnafulla Black Pudding &amp; sautéed Mushrooms. Served with freshly ground Coffee or Irish Breakfast Tea and toasted Bloomer Bread.</p>
+  <p class="gloss">Full Irish/Ulster-style breakfast with potato bread and black pudding</p>
+  <p class="why">Potato bread is the hallmark of the Ulster fry, apt on a train that links Dublin and Belfast.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Freshly Brewed Barry’s Tea</span><span class="dots" aria-hidden="true"></span><span class="price">£3.10 | €3.70</span></div>
+  
+  <p class="gloss">Barry&#x27;s tea</p>
+  <p class="why">Barry’s, founded in Cork in 1901, is one of Ireland’s two big tea brands.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Guinness</span><span class="dots" aria-hidden="true"></span><span class="price">£4.80 | €5.75</span></div>
+  
+  <p class="gloss">Guinness stout</p>
+  <p class="why">Guinness has been brewed at St James&#x27;s Gate, Dublin, since 1759.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Tayto Crisps</span><span class="dots" aria-hidden="true"></span><span class="price">£1.70 | €2.00</span></div>
+  
+  <p class="gloss">Tayto crisps</p>
+  <p class="why">Two separate firms make Tayto crisps, one on each side of the border; the Republic’s Tayto is credited with inventing cheese-and-onion crisps.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Bushmills Whiskey</span><span class="dots" aria-hidden="true"></span><span class="price">£5.70 | €6.85</span></div>
+  
+  <p class="gloss">Bushmills Irish whiskey</p>
+  <p class="why">The Co. Antrim distillery dates its licence to 1608. Named only on the trolley price list.</p>
+</li>
+  </ul>
+  
+  <dl class="meta"><div><dt>Menu</dt><dd>No printed date; file name “25.03.2026”.</dd></div><div><dt>Language</dt><dd>English</dd></div><div><dt>Prices</dt><dd>GBP / EUR (dual-priced)</dd></div><div><dt>Caterer</dt><dd>CCSL</dd></div></dl>
+  <div class="sources"><span class="src-label">Original menu</span><ul><li><a href="https://www.irishrail.ie/_kontent/d2e85689-fbf9-010a-a02e-587ed94b5032/487a1737-f555-4ba9-b446-58b445c57333/Enterprise_FirstPlus_BreakfastandLunchMenuLiteBites_25.03.2026_FINAL.pdf" target="_blank" rel="noopener">First Plus menu (PDF)</a></li><li><a href="https://www.irishrail.ie/_kontent/d2e85689-fbf9-010a-a02e-587ed94b5032/11a1a290-2673-495f-aebb-1357aca7d546/A4_ENTERPRISE_TROLLEY_Pricelist_25.03.2026_FINAL.pdf" target="_blank" rel="noopener">Trolley price list (PDF)</a></li><li><a href="https://www.irishrail.ie/en-ie/travel-information/rail-onboard-catering" target="_blank" rel="noopener">irishrail.ie: Onboard catering</a></li></ul></div>
+ </div>
+</article>
+ </div>
+</section>
+<section class="region" id="r-luxury" data-region="luxury">
+ <h2 class="sec-head"><span class="sec-name">Luxury &amp; tourist trains</span><span class="sec-count">6 services</span></h2>
+ <p class="sec-intro">Trains sold as the journey itself. Meals are included in the fare, so these menus rarely carry prices.</p>
+ <div class="cards">
+<article class="card" id="vsoe" data-region="luxury">
+ <header class="plate">
+  <span class="uic" title="UIC country code">87 · 83</span>
+  <div class="plate-text"><span class="op">Belmond</span><span class="svc">Venice Simplon-Orient-Express</span></div>
+ </header>
+ <div class="card-body">
+  <p class="where"><span class="country">France → Italy</span><span class="route">Paris – Venice (and other European routes)</span></p>
+  <p class="note">Restored 1920s Wagons-Lits carriages. Belmond names Jean Imbert as chef. Meals are included in the fare; caviar and Champagne by the bottle cost extra.</p>
+  <ul class="items">
+<li class="item">
+  <div class="line"><span class="dish" lang="fr">LE HOMARD EN BELLEVUE, LÉGUMES PRIMEURS AU CORAIL</span><span class="dots" aria-hidden="true"></span><span class="price inc">incl.</span></div>
+  <p class="desc" lang="fr">BELLEVUE LOBSTER, SPRING VEGETABLES WITH CORAL</p>
+  <p class="gloss">Lobster &#x27;en Bellevue&#x27; (served cold, glazed and elaborately presented) with young spring vegetables and lobster coral (roe).</p>
+  <p class="why">“En Bellevue” is the old haute-cuisine presentation for cold, glazed showpiece dishes: a period piece for a period train.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="fr">LE FILET DE BŒUF FAÇON WELLINGTON, FEUILLETAGES TORSADÉS &amp; GRATIN DAUPHINOIS, AIL NOUVEAU</span><span class="dots" aria-hidden="true"></span><span class="price inc">incl.</span></div>
+  <p class="desc" lang="fr">BEEF FILLET WELLINGTON STYLE WITH PUFF PASTRY TWISTS &amp; DAUPHINOIS GRATIN, SPRING GARLIC</p>
+  <p class="gloss">Beef fillet Wellington-style with twisted puff pastry, potato gratin dauphinois and new-season garlic.</p>
+  <p class="why">Pairs the British beef Wellington with gratin dauphinois, the cream-baked potatoes of south-east France.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="fr">LE FILET DE BAR “BONNE FEMME”, ASPERGES À LA FRANÇAISE &amp; SAUCE CHAMPAGNE</span><span class="dots" aria-hidden="true"></span><span class="price inc">incl.</span></div>
+  <p class="desc" lang="fr">SEABASS FILLET “BONNE FEMME”, FRENCH STYLE ASPARAGUS &amp; CHAMPAGNE SAUCE</p>
+  <p class="gloss">Sea bass fillet &#x27;bonne femme&#x27; (&#x27;housewife-style&#x27;), with French-style asparagus and Champagne sauce.</p>
+  <p class="why">&#x27;Bonne femme&#x27; is a classical French bourgeois preparation for fish (as in sole bonne femme), traditionally with mushrooms, shallots and a white-wine cream sauce.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="fr">LE RISOTTO “FRUTTI DI MARE”, CAVIAR &amp; TOMATES CONFITES</span><span class="dots" aria-hidden="true"></span><span class="price inc">incl.</span></div>
+  <p class="desc" lang="fr">“FRUTTI DI MARE” RISOTTO, CAVIAR &amp; CONFIT TOMATOES</p>
+  <p class="gloss">Seafood risotto with caviar and slow-cooked (confit) tomatoes (lunch menu).</p>
+  <p class="why">An Italian dish written into a French menu, for the train’s Venice terminus.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="fr">LA FRAISE MELBA</span><span class="dots" aria-hidden="true"></span><span class="price inc">incl.</span></div>
+  <p class="desc" lang="fr">STRAWBERRY MELBA</p>
+  <p class="gloss">Strawberry Melba (lunch dessert).</p>
+  <p class="why">A take on Escoffier’s pêche Melba, created in the 1890s for the soprano Nellie Melba.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="fr">CAVIAR BELUGA TSAR IMPERIAL ‘PETROSSIAN’ 50G</span><span class="dots" aria-hidden="true"></span><span class="price">750 €</span></div>
+  <p class="desc" lang="fr">Accompagné de blinis au beurre fondu, crème fraîche,œuf dur, échalotte / Served with blinis &amp; melted butter, sour cream, hard-boiled egg &amp; shallots</p>
+  <p class="gloss">Petrossian &#x27;Tsar Imperial&#x27; beluga caviar, 50 g, with blinis, melted butter, crème fraîche, hard-boiled egg and shallots.</p>
+  <p class="why">Petrossian, founded in Paris in 1920, supplies the caviar, the one priced dish on the menu.</p>
+</li>
+  </ul>
+  <p class="caveat">Printed in French with English beneath each line, in capitals.</p>
+  <dl class="meta"><div><dt>Menu</dt><dd>Sample lunch and dinner menus (printed codes “L 03.XXVI”, “D 03.XXVI”).</dd></div><div><dt>Language</dt><dd>Français / English</dd></div><div><dt>Prices</dt><dd>Meals included; caviar extra (EUR)</dd></div><div><dt>Chef</dt><dd>Jean Imbert</dd></div></dl>
+  <div class="sources"><span class="src-label">Original menu</span><ul><li><a href="https://pdfs.belmond.com/vso/vso-menu-sample-dinner.pdf" target="_blank" rel="noopener">Sample dinner (PDF)</a></li><li><a href="https://pdfs.belmond.com/vso/vso-menu-sample-lunch.pdf" target="_blank" rel="noopener">Sample lunch (PDF)</a></li><li><a href="https://pdfs.belmond.com/vso/vso-menu-wine-list.pdf" target="_blank" rel="noopener">Wine list (PDF)</a></li><li><a href="https://www.belmond.com/en/trains/europe/venice-simplon-orient-express/dining" target="_blank" rel="noopener">belmond.com: Dining</a></li></ul></div>
+ </div>
+</article><article class="card" id="britannic" data-region="luxury">
+ <header class="plate">
+  <span class="uic" title="UIC country code">70</span>
+  <div class="plate-text"><span class="op">Belmond</span><span class="svc">Britannic Explorer</span></div>
+ </header>
+ <div class="card-body">
+  <p class="where"><span class="country">United Kingdom</span><span class="route">London – Cornwall / Wales / Lake District</span></p>
+  <p class="note">Belmond’s British sleeper train, launched in 2025, with menus by Simon Rogan of the three-Michelin-star L’Enclume. The tasting menu follows the route: the same first course uses Cornish crab on one journey and Welsh crab on another.</p>
+  <ul class="items">
+<li class="item">
+  <div class="line"><span class="dish" lang="en">NEWLYN BAY CRAB</span><span class="dots" aria-hidden="true"></span><span class="price inc">incl.</span></div>
+  <p class="desc" lang="en">WYE VALLEY ASPARAGUS &amp; PICKLED MORELS</p>
+  <p class="gloss">Crab from Newlyn, Cornwall, with asparagus from the Wye Valley and pickled morel mushrooms (Cornwall tasting menu, first course).</p>
+  <p class="why">Newlyn, near Penzance, is one of England’s largest fishing ports. First course of the Cornwall menu.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">BARMOUTH BAY CRAB</span><span class="dots" aria-hidden="true"></span><span class="price inc">incl.</span></div>
+  <p class="desc" lang="en">WYE VALLEY ASPARAGUS &amp; PICKLED MORELS</p>
+  <p class="gloss">Crab from Barmouth, on Cardigan Bay in north-west Wales (Wales tasting menu, first course).</p>
+  <p class="why">The same dish on the Wales menu, with crab from the Cardigan Bay coast.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">CORNISH KERN &amp; WHEY ONION</span><span class="dots" aria-hidden="true"></span><span class="price inc">incl.</span></div>
+  <p class="desc" lang="en">SLOW COOKED JERSEY ROYALS &amp; BURNT CHIVES</p>
+  <p class="gloss">Cornish Kern (a hard, aged cow&#x27;s-milk cheese from Cornwall) with a whey-cooked onion, slow-cooked Jersey Royal new potatoes and burnt chives.</p>
+  <p class="why">Cornish Kern was Supreme Champion at the 2017 World Cheese Awards. Jersey Royals are a protected-origin new potato.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">BUTTERMILK SCONES</span><span class="dots" aria-hidden="true"></span><span class="price inc">incl.</span></div>
+  <p class="desc" lang="en">SERVED WITH CLOTTED CREAM &amp; SONATA STRAWBERRY JAM</p>
+  <p class="gloss">Buttermilk scones with clotted cream (a thick, scalded cream) and jam made from Sonata-variety strawberries (afternoon tea).</p>
+  <p class="why">Scones with clotted cream and jam are the heart of the West Country cream tea.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">PRESERVED BLACKCURRANT BAKEWELL</span><span class="dots" aria-hidden="true"></span><span class="price inc">incl.</span></div>
+  <p class="desc" lang="en">BUCKTHORN MARMALADE &amp; POLLEN CREAM</p>
+  <p class="gloss">A Bakewell (almond frangipane) tart with preserved blackcurrant, buckthorn marmalade and pollen cream.</p>
+  <p class="why">Named after the Derbyshire town of Bakewell, given Rogan’s foraged flavours.</p>
+</li>
+  </ul>
+  
+  <dl class="meta"><div><dt>Menu</dt><dd>Labelled “SAMPLE” (PDFs created Aug 2026).</dd></div><div><dt>Language</dt><dd>English</dd></div><div><dt>Prices</dt><dd>Meals included</dd></div><div><dt>Chef</dt><dd>Simon Rogan</dd></div></dl>
+  <div class="sources"><span class="src-label">Original menu</span><ul><li><a href="https://pdfs.belmond.com/bex/BEX-Cornwall-Tasting-Menu.pdf" target="_blank" rel="noopener">Cornwall tasting menu (PDF)</a></li><li><a href="https://pdfs.belmond.com/bex/BEX-Tasting-Menu-Wales.pdf" target="_blank" rel="noopener">Wales tasting menu (PDF)</a></li><li><a href="https://pdfs.belmond.com/bex/BEX-Afternoon-Tea-Menu.pdf" target="_blank" rel="noopener">Afternoon tea (PDF)</a></li><li><a href="https://www.belmond.com/en/trains/europe/uk/britannic-explorer/dining" target="_blank" rel="noopener">belmond.com: Dining</a></li></ul></div>
+ </div>
+</article><article class="card" id="pullman" data-region="luxury">
+ <header class="plate">
+  <span class="uic" title="UIC country code">70</span>
+  <div class="plate-text"><span class="op">Belmond</span><span class="svc">British Pullman</span></div>
+ </header>
+ <div class="card-body">
+  <p class="where"><span class="country">United Kingdom</span><span class="route">Day trips from London Victoria</span></p>
+  <p class="note">Restored Pullman carriages on day excursions from London. Belmond says head chef Jon Freeman has run the kitchen for two decades.</p>
+  <ul class="items">
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Roasted grass-fed English fillet and short rib of beef</span><span class="dots" aria-hidden="true"></span><span class="price inc">incl.</span></div>
+  <p class="desc" lang="en">Served with roast potatoes, tender-stem broccoli, pickled carrot, cauliflower cheese, Yorkshire Pudding and gravy</p>
+  <p class="gloss">A Sunday roast of English beef fillet and short rib; cauliflower cheese is cauliflower baked in cheese sauce; Yorkshire pudding is a baked batter pudding.</p>
+  <p class="why">Roast beef with Yorkshire pudding is the archetypal English Sunday lunch.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Smoked Salmon Paupiettes</span><span class="dots" aria-hidden="true"></span><span class="price inc">incl.</span></div>
+  <p class="desc" lang="en">filled with Cornish crab and citrus dressing</p>
+  <p class="gloss">Paupiettes (rolled parcels) of smoked salmon filled with Cornish crab (Sunday lunch starter).</p>
+  <p class="why">Brings Cornish shellfish onto a London day train; a paupiette is a classic French rolled-and-filled preparation.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Hand-picked English Strawberry &amp; Elderflower Trifle</span><span class="dots" aria-hidden="true"></span><span class="price inc">incl.</span></div>
+  
+  <p class="gloss">Trifle (layered sponge, fruit, custard and cream) with English strawberries and elderflower.</p>
+  <p class="why">Trifle is a centuries-old British pudding; strawberries and elderflower are emblematic English early-summer flavours.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Madagascan Vanilla Rice Pudding</span><span class="dots" aria-hidden="true"></span><span class="price inc">incl.</span></div>
+  <p class="desc" lang="en">With poached Kent damsons and rose petal syrup</p>
+  <p class="gloss">Vanilla rice pudding with poached damsons (a small, tart plum) from Kent and rose-petal syrup (five-course lunch/dinner).</p>
+  <p class="why">Rice pudding is a British nursery classic; Kent, the &#x27;Garden of England&#x27;, is known for orchard fruit.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Smoked Hampshire Chalk Stream Trout</span><span class="dots" aria-hidden="true"></span><span class="price inc">incl.</span></div>
+  <p class="desc" lang="en">Toasted croissant, free range poached egg and Hollandaise sauce</p>
+  <p class="gloss">Smoked trout from Hampshire&#x27;s chalk streams with a poached egg and hollandaise on toasted croissant (brunch).</p>
+  <p class="why">Hampshire&#x27;s chalk streams, such as the Test and Itchen, are famous for clear, mineral-rich water and trout fishing.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Seasonal Bellini</span><span class="dots" aria-hidden="true"></span><span class="price inc">incl.</span></div>
+  <p class="desc" lang="en">In honour of our sister hotel, the legendary Cipriani, we are delighted to begin our brunch service with ice-cold prosecco and our seasonal pressed fruit puree</p>
+  <p class="gloss">Prosecco with seasonal fruit purée.</p>
+  <p class="why">The Bellini was created at Harry’s Bar in Venice by Giuseppe Cipriani; Belmond owns Venice’s Hotel Cipriani.</p>
+</li>
+  </ul>
+  
+  <dl class="meta"><div><dt>Menu</dt><dd>Undated web menus.</dd></div><div><dt>Language</dt><dd>English</dd></div><div><dt>Prices</dt><dd>Meals included; wine extra</dd></div><div><dt>Chef</dt><dd>Jon Freeman</dd></div></dl>
+  <div class="sources"><span class="src-label">Original menu</span><ul><li><a href="https://www.belmond.com/en/trains/europe/uk/british-pullman/dining" target="_blank" rel="noopener">belmond.com: Dining &amp; menus</a></li><li><a href="https://www.belmond.com/en/trains/europe/uk/british-pullman/dining/modal/sunday-lunch" target="_blank" rel="noopener">Sunday lunch menu</a></li><li><a href="https://www.belmond.com/en/trains/europe/uk/british-pullman/dining/modal/five-course-dinner" target="_blank" rel="noopener">Five-course dinner menu</a></li><li><a href="https://pdfs.belmond.com/pul/PUL_Menu_Beverage.pdf" target="_blank" rel="noopener">Drinks menu (PDF)</a></li></ul></div>
+ </div>
+</article><article class="card" id="royal-scotsman" data-region="luxury">
+ <header class="plate">
+  <span class="uic" title="UIC country code">70</span>
+  <div class="plate-text"><span class="op">Belmond</span><span class="svc">Royal Scotsman</span></div>
+ </header>
+ <div class="card-body">
+  <p class="where"><span class="country">United Kingdom (Scotland)</span><span class="route">Highland circuits from Edinburgh</span></p>
+  <p class="note">Multi-night journeys through the Highlands, with meals served in two dining cars, Raven and Swift, under executive head chef Mark Tamburrini.</p>
+  <ul class="items">
+<li class="item">
+  <div class="line"><span class="dish" lang="en">The Full Scottish</span><span class="dots" aria-hidden="true"></span><span class="price inc">incl.</span></div>
+  <p class="desc" lang="en">Campbells Smoked Back Bacon, Corrie Mains Farm Free Range Eggs, Pork &amp; Herb Sausage, Haggis, Black Pudding, Potato Scone, Mushroom, Tomato, Baked Beans</p>
+  <p class="gloss">Scotland&#x27;s cooked breakfast. Haggis: sheep&#x27;s offal minced with oatmeal, suet and spices; black pudding: blood sausage; potato scone (tattie scone): a flat griddled potato bread.</p>
+  <p class="why">Haggis and the potato scone are what separate a &#x27;full Scottish&#x27; from a full English; haggis is Scotland&#x27;s national dish, celebrated at Burns Night suppers.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Traditional Scottish Porridge</span><span class="dots" aria-hidden="true"></span><span class="price inc">incl.</span></div>
+  <p class="desc" lang="en">Cream, brown sugar, optional dram of whiskey</p>
+  <p class="gloss">Oat porridge with cream and brown sugar, with an optional dram (a measure) of whisky.</p>
+  <p class="why">Oats were Scotland’s staple grain for centuries. The menu spells the dram “whiskey”, where Scotch is usually “whisky”.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Loch Duart Smoked Salmon</span><span class="dots" aria-hidden="true"></span><span class="price inc">incl.</span></div>
+  <p class="desc" lang="en">Lemon and baby capers</p>
+  <p class="gloss">Smoked salmon from Loch Duart, a salmon producer in Sutherland in the north-west Highlands.</p>
+  <p class="why">Scottish salmon is one of the country&#x27;s best-known food exports; Loch Duart raises its fish on the Sutherland coast.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Shetland Lobster Consommé, tomato and herbs</span><span class="dots" aria-hidden="true"></span><span class="price inc">incl.</span></div>
+  
+  <p class="gloss">Clear lobster broth made with lobster from Shetland, the northernmost islands of Scotland (dinner starter).</p>
+  <p class="why">Highlights shellfish from Scotland&#x27;s northern isles, whose cold waters support a significant lobster and crab fishery.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Fillet of dry aged Angus beef, green beans and bacon, fondant potato, Strathdon blue butter, Madeira jus</span><span class="dots" aria-hidden="true"></span><span class="price inc">incl.</span></div>
+  
+  <p class="gloss">Dry-aged Angus beef fillet with a butter flavoured with Strathdon Blue, a Scottish blue cow&#x27;s-milk cheese.</p>
+  <p class="why">The Aberdeen Angus breed originated in north-east Scotland in the 19th century and remains a byword for Scottish beef.</p>
+</li>
+  </ul>
+  <p class="caveat">Each dinner course is paired with a wine, such as a 2023 Puligny-Montrachet with the consommé.</p>
+  <dl class="meta"><div><dt>Menu</dt><dd>Sample menus, undated.</dd></div><div><dt>Language</dt><dd>English</dd></div><div><dt>Prices</dt><dd>Meals included</dd></div><div><dt>Chef</dt><dd>Mark Tamburrini</dd></div></dl>
+  <div class="sources"><span class="src-label">Original menu</span><ul><li><a href="https://www.belmond.com/en/trains/europe/uk/royal-scotsman/dining/modal/sample-dinner-menu" target="_blank" rel="noopener">Sample dinner</a></li><li><a href="https://www.belmond.com/en/trains/europe/uk/royal-scotsman/dining/modal/sample-breakfast-menu" target="_blank" rel="noopener">Sample breakfast</a></li><li><a href="https://www.belmond.com/en/trains/europe/uk/royal-scotsman/dining/modal/sample-lunch-menu" target="_blank" rel="noopener">Sample lunch</a></li><li><a href="https://www.belmond.com/en/trains/europe/uk/royal-scotsman/dining" target="_blank" rel="noopener">belmond.com: Dining</a></li></ul></div>
+ </div>
+</article><article class="card" id="glacier-excellence" data-region="luxury">
+ <header class="plate">
+  <span class="uic" title="UIC country code">85</span>
+  <div class="plate-text"><span class="op">Glacier Express</span><span class="svc">Excellence Class</span></div>
+ </header>
+ <div class="card-body">
+  <p class="where"><span class="country">Switzerland</span><span class="route">Zermatt – St. Moritz</span></p>
+  <p class="note">The Glacier Express’s top class: a welcome aperitif and five courses with Swiss wines, for twenty passengers with a concierge.</p>
+  <ul class="items">
+<li class="item">
+  <div class="line"><span class="dish" lang="de-CH">EXCELLENCE CLASS APEROPLÄTTCHEN</span><span class="dots" aria-hidden="true"></span><span class="price">Included (mandatory Excellence Class seat reservation CHF 540 on top of a 1st-class ticket)</span></div>
+  <p class="desc" lang="de-CH">mit Tatar-Tartelette, Chäschüechli und Gewürz-Nussmischung</p>
+  <p class="gloss">Aperitif plate with a tartare tartlet, &#x27;Chäschüechli&#x27; (Swiss-German: small cheese tart) and spiced nuts. Printed English: &#x27;EXCELLENCE CLASS STARTER PLATE with tartar mini-tart, cheese tart and mixed spiced nuts&#x27;.</p>
+  <p class="why">Chäschüechli, small savoury cheese tarts, are a staple Swiss snack; served with a glass of Laurent-Perrier Champagne as the welcome course.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="de-CH">IN DER SCHWEIZ GERÄUCHERTE FORELLE</span><span class="dots" aria-hidden="true"></span><span class="price">Included</span></div>
+  <p class="desc" lang="de-CH">mit ofengerösteten Randen, Apfel, Salat und Meerrettich-Frischkäse</p>
+  <p class="gloss">Trout smoked in Switzerland with oven-roasted &#x27;Randen&#x27; (Swiss-German for beetroot), apple, salad and horseradish cream cheese.</p>
+  <p class="why">Trout is the classic fish of Alpine lakes. “Randen” is the Swiss word for beetroot; Germans say Rote Bete.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="de-CH">SCHWEIZER RINDSFILET</span><span class="dots" aria-hidden="true"></span><span class="price">Included</span></div>
+  <p class="desc" lang="de-CH">mit Trüffel-Kartoffelstampf, Rüebli, Frühlingszwiebeln und Bergkräuterjus</p>
+  <p class="gloss">Swiss beef fillet with truffled mashed potato, &#x27;Rüebli&#x27; (Swiss-German for carrots), spring onions and a mountain-herb jus.</p>
+  <p class="why">The menu states that all meat comes from Swiss animal-welfare-compliant farms.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="de-CH">REGIONALE KÄSEPLATTE</span><span class="dots" aria-hidden="true"></span><span class="price">Included</span></div>
+  <p class="desc" lang="de-CH">mit Viamala Mutschli, Bündner Bergkäse, Aletsch Hobelkäse und Langwieser Bio-Schafskäse mit Tomaten-Aprikosen Chutney, dazu Birnenbrot und Crackers</p>
+  <p class="gloss">Regional cheese plate: a Mutschli (small, round semi-hard cheese) from the Viamala gorge area, Graubünden mountain cheese, Aletsch &#x27;Hobelkäse&#x27; (hard cheese shaved thin) and organic sheep&#x27;s cheese from Langwies, with tomato-apricot chutney and pear bread.</p>
+  <p class="why">Cheeses from Graubünden and Valais, the two cantons the train links, with Graubünden pear bread.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="de-CH">NACHMITTAGSTEE</span><span class="dots" aria-hidden="true"></span><span class="price">Included</span></div>
+  <p class="desc" lang="de-CH">Bündner Bergkräutertee</p>
+  <p class="gloss">Afternoon tea: Graubünden mountain-herb infusion.</p>
+  <p class="why">Served as the train nears St. Moritz.</p>
+</li>
+  </ul>
+  <p class="caveat">The printed English translation differs from the German in places. The German original is quoted here.</p>
+  <dl class="meta"><div><dt>Menu</dt><dd>Printed “Oktober 2024, V10”, still the menu linked from the live page.</dd></div><div><dt>Language</dt><dd>Deutsch (Schweiz)</dd></div><div><dt>Prices</dt><dd>Included in a CHF 540 reservation (plus 1st-class ticket)</dd></div><div><dt>Caterer</dt><dd>Panoramic Gourmet AG</dd></div></dl>
+  <div class="sources"><span class="src-label">Original menu</span><ul><li><a href="https://glacierexpress.ch/GEX_excellence_menu.pdf" target="_blank" rel="noopener">Excellence menu (PDF)</a></li><li><a href="https://glacierexpress.ch/en/excellence-class" target="_blank" rel="noopener">glacierexpress.ch: Excellence Class</a></li></ul></div>
+ </div>
+</article><article class="card" id="goldenpass" data-region="luxury">
+ <header class="plate">
+  <span class="uic" title="UIC country code">85</span>
+  <div class="plate-text"><span class="op">GoldenPass Express</span><span class="svc">1st Class &amp; Prestige</span></div>
+ </header>
+ <div class="card-body">
+  <p class="where"><span class="country">Switzerland</span><span class="route">Montreux – Interlaken</span></p>
+  <p class="note">Through trains from Lake Geneva to the Bernese Oberland since December 2022, changing gauge at Zweisimmen. Food must be pre-booked.</p>
+  <ul class="items">
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Caviar*</span><span class="dots" aria-hidden="true"></span><span class="price">CHF 94.-</span></div>
+  <p class="desc" lang="en">Oona Caviar N°103-traditional 20g, blinis, sour cream et and a glass of Duval Leroy Brut champagne</p>
+  <p class="gloss">20 g of Oona caviar with blinis, sour cream and a glass of Champagne; &#x27;*Only available for 1st Class and Prestige bookings.&#x27;</p>
+  <p class="why">Oona caviar is farmed at Frutigen in the Bernese Oberland, in water warmed by the Lötschberg base tunnel.</p>
+</li>
+<li class="item">
+  <div class="line"><span class="dish" lang="en">Aperitif platter</span><span class="dots" aria-hidden="true"></span><span class="price">CHF 31.90</span></div>
+  <p class="desc" lang="en">Local products (meat and cheeses) with drink*</p>
+  <p class="gloss">Platter of local charcuterie and cheeses with a soft drink, beer or wine (Champagne excluded).</p>
+  <p class="why">The charcuterie comes from Buure Metzg in Gstaad, a resort on the line.</p>
+</li>
+  </ul>
+  <p class="caveat">Only the caviar is limited to 1st Class and Prestige.</p>
+  <dl class="meta"><div><dt>Menu</dt><dd>Undated web page.</dd></div><div><dt>Language</dt><dd>English</dd></div><div><dt>Prices</dt><dd>CHF</dd></div></dl>
+  <div class="sources"><span class="src-label">Original menu</span><ul><li><a href="https://www.gpx.swiss/en/pages/catering" target="_blank" rel="noopener">gpx.swiss: Catering</a></li></ul></div>
+ </div>
+</article>
+ </div>
+</section>
+
+ <footer class="colophon">
+  <div>
+   <h2>How this was compiled</h2>
+   <p>Every menu comes from the operator’s own website or the caterer it links to. Dish names, printed descriptions and prices are copied as printed, including capitals, diacritics and local price formats such as “8€40”. Allergen codes, calorie counts and footnote markers are left out.</p>
+   <p>“incl.” marks a dish whose price is part of the fare or the class of travel. The English glosses and notes are editorial.</p>
+   <p>Menus change with the seasons. Several cards here are summer editions that autumn menus will replace within weeks, and each card gives the date the operator printed.</p>
+  </div>
+  <div>
+   <h2>Not on the board</h2>
+   <p>These were checked but left out because no current official menu could be verified.</p>
+   <ul><li><strong>CP – Comboios de Portugal.</strong> The Alfa Pendular bar changed operator in 2025; no menu is published online.</li><li><strong>DSB (Denmark).</strong> No on-board menu. First class gets coffee, tea and a small snack.</li><li><strong>ScotRail.</strong> Its menu PDFs sit behind a security check that blocked retrieval.</li><li><strong>RegioJet (Czechia).</strong> The menu appears only in its app and on-board portal; the website carries only a press release.</li><li><strong>Ukrzaliznytsia (Ukraine).</strong> No official dining-car menu could be reached. The only menu found was a third-party café’s.</li><li><strong>Italo (Italy).</strong> A Club Executive menu PDF exists but is undated and no current page links to it.</li><li><strong>La Dolce Vita Orient Express.</strong> The site describes Heinz Beck’s cooking without listing any dishes.</li><li><strong>Renfe Transcantábrico &amp; Al Ándalus.</strong> No menus published; meals alternate between the train and restaurants on the route.</li><li><strong>Hellenic Train (Greece).</strong> Its on-board services page was offline.</li><li><strong>Golden Eagle Danube Express.</strong> Brochure only, with no menu.</li></ul>
+  </div>
+ </footer>
+</main>
+
+<script>
+(function(){
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+  var sections = document.querySelectorAll('.region');
+  var rows = document.querySelectorAll('.board li');
+  function apply(f){
+    chips.forEach(function(c){ c.setAttribute('aria-pressed', String(c.dataset.filter === f)); });
+    Array.prototype.forEach.call(sections, function(s){ s.hidden = !(f === 'all' || s.dataset.region === f); });
+    Array.prototype.forEach.call(rows, function(r){ r.hidden = !(f === 'all' || r.dataset.region === f); });
+  }
+  chips.forEach(function(c){ c.addEventListener('click', function(){ apply(c.dataset.filter); }); });
+  Array.prototype.forEach.call(rows, function(r){
+    r.querySelector('a').addEventListener('click', function(){
+      var target = document.getElementById(this.getAttribute('href').slice(1));
+      if (target && target.closest('.region').hidden) apply('all');
+    });
+  });
+})();
+</script>
+</body>
+</html>
